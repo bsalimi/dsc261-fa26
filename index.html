@@ -269,6 +269,44 @@
     .deliverable { color: #38506b; font-size: 12.5px; line-height: 1.4; }
     .holiday td { background: #fff8e8; color: #685118; font-weight: 700; }
 
+    .module-materials { align-items: stretch; }
+    .session-card { display: flex; flex-direction: column; gap: 12px; }
+    .session-card h3 { margin: 0; font-size: 1.16rem; }
+    .session-card h4 {
+      margin: 4px 0 -4px;
+      color: var(--navy);
+      font-size: .78rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    .session-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .deck-meta { color: var(--muted); font-size: 12px; font-weight: 750; white-space: nowrap; }
+    .slides-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 2px;
+      padding: 12px 14px;
+      border-radius: 9px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+    }
+    .slides-button small { color: #cbd9e8; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+    .slides-button:hover { background: var(--blue); text-decoration: none; }
+    .session-readings { padding-top: 2px; }
+    .session-output {
+      margin-top: auto;
+      padding: 11px 13px;
+      border-left: 3px solid var(--teal);
+      border-radius: 0 7px 7px 0;
+      background: var(--teal-soft);
+      color: #284f4a;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
     .timeline { display: grid; gap: 12px; margin-top: 20px; }
     .timeline-item {
       display: grid;
@@ -358,7 +396,7 @@
         <p class="subtitle">Trustworthy machine learning in the era of large language models — from evaluation contracts and uncertainty to privacy, agent security, monitoring, and AI control.</p>
         <div class="hero-badges" aria-label="Course highlights">
           <span class="hero-badge">Fall 2026</span>
-          <span class="hero-badge">20 technical meetings</span>
+          <span class="hero-badge">Module 1 available</span>
           <span class="hero-badge">Project-based</span>
         </div>
       </div>
@@ -377,7 +415,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#outcomes">Outcomes</a></li>
-      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#module1">Module 1</a></li>
       <li><a href="#project">Project</a></li>
       <li><a href="#grading">Grading</a></li>
       <li><a href="#team">Team</a></li>
@@ -438,200 +476,52 @@
       <div class="callout warn"><strong>Prerequisites:</strong> machine learning, probability, linear algebra, and fluent Python. Specialized refreshers appear just in time; the course does not spend the quarter rebuilding general ML foundations.</div>
     </section>
 
-    <section id="schedule">
-      <span class="section-kicker">Calendar</span>
-      <h2>Twenty-meeting technical sequence</h2>
-      <p class="lead">The reading list prioritizes archival papers from top venues. Fast-moving technical reports are clearly labeled as frontier briefings. Dates follow the UC San Diego Fall 2026 academic calendar and the planned Tuesday/Thursday sequence; TSS and Canvas remain authoritative for meeting logistics and any calendar change.</p>
+    <section id="module1">
+      <span class="section-kicker">Published course materials</span>
+      <h2>Module 1: Course opening and compact foundations</h2>
+      <p class="lead">Module 1 spans the first two meetings. It begins with concrete failures that motivate trustworthy machine learning, then develops only the model foundations needed to reason about modern language models and deployed LLM systems.</p>
+      <div class="callout"><strong>Currently available:</strong> only Module 1 materials are published on this site. Additional module materials will be posted after they are released.</div>
 
-      <div class="table-wrap">
-        <table class="schedule">
-          <thead>
-            <tr>
-              <th>Meeting</th>
-              <th>Date</th>
-              <th>Topic</th>
-              <th>Core papers and sources</th>
-              <th>Executable object</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="session-no">01</td><td class="date">Thu · Sep 24</td>
-              <td><span class="module-tag">M1 · Course opening</span><div class="topic">Why responsible data science is a technical discipline</div></td>
-              <td>
-                <span class="reading"><a href="https://facctconference.org/static/pdfs_2022/facct22-3533088.pdf">Taxonomy of Risks Posed by Language Models</a><small>Weidinger et al. · FAccT 2022 · optional risk map</small></span>
-                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/cce0e917b050208170151f77b497fc71-Abstract-Conference.html">Scalable Extraction of Training Data from Aligned, Production Language Models</a><small>Nasr et al. · ICLR 2025</small></span>
-              </td>
-              <td class="deliverable">Machine-readable incident reconstruction</td>
-            </tr>
-            <tr>
-              <td class="session-no">02</td><td class="date">Tue · Sep 29</td>
-              <td><span class="module-tag">M1 · Foundations</span><div class="topic">Reconstructing a deployed LLM system</div></td>
-              <td>
-                <span class="reading"><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a><small>Vaswani et al. · NeurIPS 2017</small></span>
-                <span class="reading"><a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">Language Models are Unsupervised Multitask Learners</a><small>Radford et al. · technical report 2019</small></span>
-                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html">Training Language Models to Follow Instructions with Human Feedback</a><small>Ouyang et al. · NeurIPS 2022</small></span>
-              </td>
-              <td class="deliverable">Versioned, replayable system trace</td>
-            </tr>
-            <tr>
-              <td class="session-no">03</td><td class="date">Thu · Oct 1</td>
-              <td><span class="module-tag">M2 · Evaluation</span><div class="topic">Evaluation validity: what does the score measure?</div></td>
-              <td>
-                <span class="reading"><a href="https://openreview.net/forum?id=iO4LZibEqW">Holistic Evaluation of Language Models</a><small>Liang et al. · TMLR 2023</small></span>
-                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/63cb9921eecf51bfad27a99b2c53dd6d-Abstract-Datasets_and_Benchmarks.html">DecodingTrust</a><small>Wang et al. · NeurIPS 2023 Datasets &amp; Benchmarks</small></span>
-              </td>
-              <td class="deliverable">Falsifiable evaluation contract</td>
-            </tr>
-            <tr>
-              <td class="session-no">04</td><td class="date">Tue · Oct 6</td>
-              <td><span class="module-tag">M2 · Evaluation</span><div class="topic">Hallucination, uncertainty, and abstention</div></td>
-              <td>
-                <span class="reading"><a href="https://aclanthology.org/2022.acl-long.229/">TruthfulQA</a><small>Lin, Hilton &amp; Evans · ACL 2022</small></span>
-                <span class="reading"><a href="https://www.nature.com/articles/s41586-024-07421-0">Detecting Hallucinations Using Semantic Entropy</a><small>Farquhar et al. · Nature 2024</small></span>
-                <span class="reading"><a href="https://www.nature.com/articles/s41586-026-10549-w">Accuracy Incentivizes Hallucinations</a><small>Kalai et al. · Nature 2026</small></span>
-              </td>
-              <td class="deliverable">Risk–coverage and abstention rule</td>
-            </tr>
-            <tr>
-              <td class="session-no">05</td><td class="date">Thu · Oct 8</td>
-              <td><span class="module-tag">M2 · Verification</span><div class="topic">Grounding, citations, and claim verification</div></td>
-              <td>
-                <span class="reading"><a href="https://aclanthology.org/2023.emnlp-main.398/">Enabling LLMs to Generate Text with Citations (ALCE)</a><small>Gao et al. · EMNLP 2023</small></span>
-                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html">Self-RAG</a><small>Asai et al. · ICLR 2024</small></span>
-              </td>
-              <td class="deliverable">Claim–evidence verifier loop</td>
-            </tr>
-            <tr>
-              <td class="session-no">06</td><td class="date">Tue · Oct 13</td>
-              <td><span class="module-tag">M3 · Alignment</span><div class="topic">Post-training as an optimization substrate</div></td>
-              <td>
-                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html">Training Language Models to Follow Instructions with Human Feedback</a><small>Ouyang et al. · NeurIPS 2022</small></span>
-                <span class="reading"><a href="https://arxiv.org/abs/2212.08073">Constitutional AI</a><small>Bai et al. · frontier briefing 2022</small></span>
-              </td>
-              <td class="deliverable">Optimization-pipeline trust-boundary audit</td>
-            </tr>
-            <tr>
-              <td class="session-no">07</td><td class="date">Thu · Oct 15</td>
-              <td><span class="module-tag">M3 · Alignment</span><div class="topic">Reward hacking and overoptimization</div></td>
-              <td><span class="reading"><a href="https://proceedings.mlr.press/v202/gao23h.html">Scaling Laws for Reward Model Overoptimization</a><small>Gao et al. · ICML 2023</small></span></td>
-              <td class="deliverable">Proxy-versus-gold stress test</td>
-            </tr>
-            <tr>
-              <td class="session-no">08</td><td class="date">Tue · Oct 20</td>
-              <td><span class="module-tag">M3 · Oversight</span><div class="topic">Weak supervision and scalable oversight</div></td>
-              <td>
-                <span class="reading"><a href="https://proceedings.mlr.press/v235/burns24a.html">Weak-to-Strong Generalization</a><small>Burns et al. · ICML 2024</small></span>
-                <span class="reading"><a href="https://proceedings.mlr.press/v235/khan24a.html">Debating with More Persuasive LLMs Leads to More Truthful Answers</a><small>Khan et al. · ICML 2024</small></span>
-              </td>
-              <td class="deliverable">Oversight protocol and failure analysis</td>
-            </tr>
-            <tr>
-              <td class="session-no">09</td><td class="date">Thu · Oct 22</td>
-              <td><span class="module-tag">M4 · Robustness</span><div class="topic">Adaptive attack–defense evaluation</div></td>
-              <td>
-                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/fd6613131889a4b656206c50a8bd7790-Abstract-Conference.html">Jailbroken</a><small>Wei, Haghtalab &amp; Steinhardt · NeurIPS 2023</small></span>
-                <span class="reading"><a href="https://proceedings.mlr.press/v235/mazeika24a.html">HarmBench</a><small>Mazeika et al. · ICML 2024</small></span>
-              </td>
-              <td class="deliverable">Adaptive red-team evaluation contract</td>
-            </tr>
-            <tr>
-              <td class="session-no">10</td><td class="date">Tue · Oct 27</td>
-              <td><span class="module-tag">M4 · Robustness</span><div class="topic">Backdoors and data poisoning</div></td>
-              <td><span class="reading"><a href="https://proceedings.mlr.press/v202/wan23b.html">Poisoning Language Models During Instruction Tuning</a><small>Wan et al. · ICML 2023</small></span></td>
-              <td class="deliverable">Poison-budget and persistence experiment</td>
-            </tr>
-            <tr>
-              <td class="session-no">11</td><td class="date">Thu · Oct 29</td>
-              <td><span class="module-tag">M5 · Interpretability</span><div class="topic">Causal tracing and model editing</div></td>
-              <td>
-                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/6f1d43d5a82a37e89b0665b33bf3a182-Abstract-Conference.html">Locating and Editing Factual Associations in GPT (ROME)</a><small>Meng et al. · NeurIPS 2022</small></span>
-                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/3927bbdcf0e8d1fa8aa23c26f358a281-Abstract-Conference.html">Does Localization Inform Editing?</a><small>Hase et al. · NeurIPS 2023</small></span>
-              </td>
-              <td class="deliverable">Causal intervention with locality checks</td>
-            </tr>
-            <tr>
-              <td class="session-no">12</td><td class="date">Tue · Nov 3</td>
-              <td><span class="module-tag">M5 · Interpretability</span><div class="topic">Sparse features, circuits, and activation control</div></td>
-              <td>
-                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/42ef3308c230942d223c411adf182c88-Abstract-Conference.html">Scaling and Evaluating Sparse Autoencoders</a><small>Gao et al. · ICLR 2025</small></span>
-                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/84ca3f2d9d9bfca13f69b48ea63eb4a5-Abstract-Conference.html">Sparse Autoencoders Do Not Find Canonical Units</a><small>Leask et al. · ICLR 2025</small></span>
-              </td>
-              <td class="deliverable">Feature validation and steering audit</td>
-            </tr>
-            <tr>
-              <td class="session-no">13</td><td class="date">Thu · Nov 5</td>
-              <td><span class="module-tag">M5 · Monitoring</span><div class="topic">Chain-of-thought faithfulness and monitoring</div></td>
-              <td><span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/ed3fea9033a80fea1376299fa7863f4a-Abstract.html">Language Models Don’t Always Say What They Think</a><small>Turpin et al. · NeurIPS 2023</small></span></td>
-              <td class="deliverable">Monitor ROC curve under intervention</td>
-            </tr>
-            <tr>
-              <td class="session-no">14</td><td class="date">Tue · Nov 10</td>
-              <td><span class="module-tag">M6 · Privacy</span><div class="topic">Training-data extraction and memorization science</div></td>
-              <td>
-                <span class="reading"><a href="https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting">Extracting Training Data from Large Language Models</a><small>Carlini et al. · USENIX Security 2021</small></span>
-                <span class="reading"><a href="https://openreview.net/forum?id=vjel3nWP2a">Scalable Extraction from Production Language Models</a><small>Nasr et al. · ICLR 2025</small></span>
-              </td>
-              <td class="deliverable">Canary/extractability audit</td>
-            </tr>
-            <tr>
-              <td class="session-no">15</td><td class="date">Thu · Nov 12</td>
-              <td><span class="module-tag">M6 · Privacy</span><div class="topic">Honest privacy auditing</div></td>
-              <td>
-                <span class="reading"><a href="https://openreview.net/forum?id=TatRHT_1cK">Quantifying Memorization Across Neural Language Models</a><small>Carlini et al. · ICLR 2023</small></span>
-                <span class="reading"><a href="https://openreview.net/forum?id=av0D19pSkU">Do Membership Inference Attacks Work on LLMs?</a><small>Duan et al. · COLM 2024</small></span>
-              </td>
-              <td class="deliverable">Controlled privacy-audit protocol</td>
-            </tr>
-            <tr>
-              <td class="session-no">16</td><td class="date">Tue · Nov 17</td>
-              <td><span class="module-tag">M6 · Attribution</span><div class="topic">Data attribution and measured deletion</div></td>
-              <td>
-                <span class="reading"><a href="https://aclanthology.org/2022.acl-long.577/">Deduplicating Training Data Makes Language Models Better</a><small>Lee et al. · ACL 2022</small></span>
-                <span class="reading"><a href="https://openreview.net/forum?id=B41hNBoWLo">TOFU: A Task of Fictitious Unlearning for LLMs</a><small>Maini et al. · COLM 2024</small></span>
-              </td>
-              <td class="deliverable">Deletion efficacy and utility-retention test</td>
-            </tr>
-            <tr>
-              <td class="session-no">17</td><td class="date">Thu · Nov 19</td>
-              <td><span class="module-tag">M7 · Agent security</span><div class="topic">Prompt injection by design</div></td>
-              <td>
-                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/97091a5177d8dc64b1da8bf3e1f6fb54-Abstract-Datasets_and_Benchmarks_Track.html">AgentDojo</a><small>Debenedetti et al. · NeurIPS 2024 D&amp;B</small></span>
-                <span class="reading"><a href="https://satml.org/2026/program/">Defeating Prompt Injections by Design (CaMeL)</a><small>Debenedetti et al. · IEEE SaTML 2026</small></span>
-              </td>
-              <td class="deliverable">Control/data-flow threat model</td>
-            </tr>
-            <tr>
-              <td class="session-no">18</td><td class="date">Tue · Nov 24</td>
-              <td><span class="module-tag">M7 · Agent reliability</span><div class="topic">Delegation and multi-agent failure</div></td>
-              <td>
-                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/c493d23af93118975cdbc32cbe7323f5-Abstract-Conference.html">AgentHarm</a><small>Andriushchenko et al. · ICLR 2025</small></span>
-                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/7274ed909a312d4d869cc328ad1c5f04-Abstract-Conference.html">ToolEmu</a><small>Ruan et al. · ICLR 2024</small></span>
-                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/1b126cc38b8638e07bef37e7b2bb72bf-Abstract-Conference.html">τ-bench</a><small>Yao et al. · ICLR 2025</small></span>
-              </td>
-              <td class="deliverable">Repeated-trial trajectory evaluation</td>
-            </tr>
-            <tr class="holiday"><td>—</td><td>Thu · Nov 26</td><td colspan="3">Thanksgiving holiday — no class</td></tr>
-            <tr>
-              <td class="session-no">19</td><td class="date">Tue · Dec 1</td>
-              <td><span class="module-tag">M8 · Misalignment</span><div class="topic">Hidden objectives and emergent misalignment</div></td>
-              <td>
-                <span class="reading"><a href="https://www.nature.com/articles/s41586-025-09937-5">Training on Narrow Tasks Can Lead to Broad Misalignment</a><small>Betley et al. · Nature 2026</small></span>
-                <span class="reading"><a href="https://arxiv.org/abs/2412.14093">Alignment Faking in Large Language Models</a><small>Greenblatt et al. · frontier briefing 2024</small></span>
-              </td>
-              <td class="deliverable">Elicitation plan and behavioral distinguisher</td>
-            </tr>
-            <tr>
-              <td class="session-no">20</td><td class="date">Thu · Dec 3</td>
-              <td><span class="module-tag">M8 · AI control</span><div class="topic">Adversarial control protocols</div></td>
-              <td><span class="reading"><a href="https://proceedings.mlr.press/v235/greenblatt24a.html">AI Control: Improving Safety Despite Intentional Subversion</a><small>Greenblatt et al. · ICML 2024</small></span></td>
-              <td class="deliverable">Safety–usefulness control frontier</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="grid two module-materials">
+        <article class="card card-accent session-card">
+          <div class="session-heading">
+            <span class="module-tag">Session 1 · Thu, Sep 24</span>
+            <span class="deck-meta">50 slides</span>
+          </div>
+          <h3>Course motivation and foundations through BERT</h3>
+          <p>Why trustworthiness is a technical discipline; real failure cases; the course evidence standard; and the compact path from sequence models and attention to Transformers and BERT.</p>
+          <a class="slides-button" href="materials/module-1/session-1-course-opening-and-foundations.pdf">
+            <span>Open Session 1 slides</span><small>PDF · 50 slides</small>
+          </a>
+          <h4>Primary papers and sources</h4>
+          <div class="session-readings">
+            <span class="reading"><a href="https://facctconference.org/static/pdfs_2022/facct22-3533088.pdf">Taxonomy of Risks Posed by Language Models</a><small>Weidinger et al. · FAccT 2022 · optional risk map</small></span>
+            <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/cce0e917b050208170151f77b497fc71-Abstract-Conference.html">Scalable Extraction of Training Data from Aligned, Production Language Models</a><small>Nasr et al. · ICLR 2025</small></span>
+            <span class="reading"><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a><small>Vaswani et al. · NeurIPS 2017</small></span>
+          </div>
+          <div class="session-output"><strong>In class:</strong> reconstruct a failure as a machine-readable incident and identify the trust claim that failed.</div>
+        </article>
+
+        <article class="card card-accent teal session-card">
+          <div class="session-heading">
+            <span class="module-tag">Session 2 · Tue, Sep 29</span>
+            <span class="deck-meta">70 slides</span>
+          </div>
+          <h3>GPT-2 onward: the modern LLM system</h3>
+          <p>Causal pretraining, scaling and in-context learning, post-training, retrieval, reasoning, tool use, and the system boundary required for trustworthy evaluation.</p>
+          <a class="slides-button" href="materials/module-1/session-2-gpt2-onward-foundations.pdf">
+            <span>Open Session 2 slides</span><small>PDF · 70 slides</small>
+          </a>
+          <h4>Primary papers and sources</h4>
+          <div class="session-readings">
+            <span class="reading"><a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">Language Models are Unsupervised Multitask Learners</a><small>Radford et al. · technical report 2019</small></span>
+            <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html">Training Language Models to Follow Instructions with Human Feedback</a><small>Ouyang et al. · NeurIPS 2022</small></span>
+          </div>
+          <div class="session-output"><strong>In class:</strong> produce a versioned, replayable system trace spanning model, prompt, retrieval, tools, permissions, and observations.</div>
+        </article>
       </div>
-      <div class="callout"><strong>Slides and course artifacts:</strong> released through Canvas as they are finalized. Paper links above point to primary or official records whenever available.</div>
     </section>
+
 
     <section id="project">
       <span class="section-kicker">Quarter-long work</span>
