@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DSC 261: Responsible Data Science in the Era of Large Language Models — Fall 2026 at UC San Diego.">
+  <title>DSC 261 — Responsible Data Science — Fall 2026</title>
+  <style>
+    :root {
+      --navy: #182b49;
+      --navy-deep: #0f1d33;
+      --blue: #00629b;
+      --blue-soft: #e7f1f8;
+      --gold: #ffcd00;
+      --gold-deep: #c69214;
+      --teal: #087f73;
+      --teal-soft: #e7f7f4;
+      --rose: #a83a3a;
+      --rose-soft: #fbeeee;
+      --ink: #202a36;
+      --muted: #5b6675;
+      --line: #e1e7ee;
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --shadow: 0 1px 3px rgba(16, 30, 54, .08), 0 8px 28px rgba(16, 30, 54, .07);
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -60px;
+      z-index: 100;
+      background: #fff;
+      color: var(--navy);
+      padding: 10px 14px;
+      border-radius: 0 0 8px 8px;
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* DSC 100 template: UCSD gradient hero + logistics panel */
+    .hero {
+      color: #fff;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(0, 98, 155, .75), transparent 34%),
+        linear-gradient(145deg, var(--navy) 0%, var(--navy-deep) 72%);
+      border-bottom: 4px solid var(--gold);
+      padding: 50px 0 42px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(270px, .8fr);
+      gap: 38px;
+      align-items: start;
+    }
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 780px;
+      margin: 9px 0 9px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.15rem, 5vw, 3.5rem);
+      line-height: 1.04;
+      letter-spacing: -.035em;
+    }
+    .hero .subtitle {
+      max-width: 730px;
+      margin: 0;
+      color: #dce7f2;
+      font-size: 1.08rem;
+    }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 11px;
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 650;
+    }
+    .hero-badge::before { content: "•"; color: var(--gold); font-size: 1.2rem; line-height: 0; }
+    .logistics {
+      padding: 18px 20px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .07);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+    }
+    .logistics h2 {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .logistics-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 7px 0;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      color: #edf3f8;
+      font-size: 13.5px;
+    }
+    .logistics-row:first-of-type { border-top: 0; }
+    .logistics-row strong { color: #fff; text-align: right; }
+    .logistics a { color: #c8e8ff; }
+
+    .subnav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: saturate(180%) blur(9px);
+      box-shadow: 0 2px 10px rgba(16, 30, 54, .06);
+    }
+    .subnav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      width: min(1120px, calc(100% - 24px));
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+    .subnav a {
+      display: block;
+      padding: 13px 13px 11px;
+      border-bottom: 3px solid transparent;
+      color: var(--muted);
+      font-size: 13.5px;
+      font-weight: 700;
+    }
+    .subnav a:hover, .subnav a.active { color: var(--blue); text-decoration: none; border-color: var(--gold-deep); }
+
+    main { min-height: 60vh; }
+    section { padding: 43px 0; border-bottom: 1px solid var(--line); }
+    section:last-child { border-bottom: 0; }
+    .section-kicker {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--gold-deep);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.65rem, 3vw, 2.2rem);
+      line-height: 1.18;
+      letter-spacing: -.02em;
+    }
+    h3 { color: var(--navy); }
+    .lead { max-width: 80ch; margin: 8px 0 0; color: var(--muted); font-size: 1rem; }
+    .lede-strong { color: var(--ink); font-size: 1.06rem; }
+
+    .grid { display: grid; gap: 18px; margin-top: 22px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .card h3 { margin: 0 0 7px; font-size: 1.03rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .card ul { margin: 9px 0 0; padding-left: 20px; }
+    .card li { margin: 5px 0; }
+    .card-accent { border-top: 4px solid var(--blue); }
+    .card-accent.teal { border-top-color: var(--teal); }
+    .card-accent.gold { border-top-color: var(--gold-deep); }
+    .number {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 11px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .callout {
+      margin-top: 20px;
+      padding: 14px 17px;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 9px 9px 0;
+      background: var(--blue-soft);
+      font-size: 14px;
+    }
+    .callout.project { border-color: var(--teal); background: var(--teal-soft); }
+    .callout.warn { border-color: var(--gold-deep); background: #fff8e8; }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    table { width: 100%; border-collapse: collapse; }
+    .schedule { min-width: 980px; font-size: 13.5px; }
+    thead th {
+      padding: 12px 13px;
+      background: var(--navy);
+      color: #fff;
+      text-align: left;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+    }
+    tbody td { padding: 12px 13px; border-top: 1px solid var(--line); vertical-align: top; }
+    tbody tr:nth-child(even) { background: #fbfcfe; }
+    tbody tr:hover { background: #f1f7fb; }
+    .session-no { color: var(--blue); font-weight: 850; white-space: nowrap; }
+    .date { color: var(--muted); white-space: nowrap; }
+    .topic { color: var(--ink); font-weight: 800; line-height: 1.35; }
+    .module-tag {
+      display: inline-block;
+      margin-bottom: 5px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .reading { display: block; margin: 2px 0 5px; line-height: 1.35; }
+    .reading:last-child { margin-bottom: 0; }
+    .reading a { font-weight: 650; }
+    .reading small { display: block; color: var(--muted); }
+    .deliverable { color: #38506b; font-size: 12.5px; line-height: 1.4; }
+    .holiday td { background: #fff8e8; color: #685118; font-weight: 700; }
+
+    .timeline { display: grid; gap: 12px; margin-top: 20px; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 98px minmax(0, 1fr);
+      gap: 18px;
+      padding: 15px 17px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 10px 10px 0;
+      background: #fff;
+    }
+    .timeline-when { color: var(--teal); font-size: 12px; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
+    .timeline-item h3 { margin: 0 0 3px; font-size: .98rem; }
+    .timeline-item p { margin: 0; color: var(--muted); font-size: 13.5px; }
+
+    .grade-table { min-width: 600px; font-size: 14px; }
+    .grade-table td:nth-child(2) { width: 110px; color: var(--blue); font-weight: 850; }
+    .grade-table td:last-child { color: var(--muted); }
+    .team-card { display: flex; align-items: flex-start; gap: 14px; }
+    .avatar {
+      display: grid;
+      place-items: center;
+      flex: 0 0 48px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      color: #fff;
+      font-weight: 850;
+    }
+    .team-card h3 { margin: 0 0 2px; }
+    .muted { color: var(--muted); }
+
+    .resource-list { display: grid; gap: 9px; margin: 16px 0 0; padding: 0; list-style: none; }
+    .resource-list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fff;
+      font-weight: 750;
+    }
+    .resource-list a::after { content: "↗"; }
+    .resource-list a:hover { border-color: var(--blue); text-decoration: none; }
+
+    footer { padding: 28px 0; background: var(--navy); color: #cfdae7; font-size: 13.5px; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px; }
+    footer strong { color: #fff; }
+    footer a { color: #bfe3ff; }
+
+    @media (max-width: 860px) {
+      .hero-grid, .grid.two, .grid.three { grid-template-columns: 1fr; }
+      .hero { padding: 38px 0 34px; }
+      .hero h1 { font-size: 2.45rem; }
+      .logistics { max-width: 540px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 26px, 1120px); }
+      .subnav { overflow-x: auto; }
+      .subnav ul { width: max-content; min-width: 100%; flex-wrap: nowrap; }
+      .subnav a { padding-inline: 11px; }
+      section { padding: 34px 0; }
+      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+      .logistics-row { display: grid; gap: 1px; }
+      .logistics-row strong { text-align: left; }
+      .hero h1 { font-size: 2.05rem; }
+    }
+    @media print {
+      .subnav, .skip-link { display: none; }
+      body { background: #fff; color: #000; }
+      .hero { color: #fff !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .card, .table-wrap { box-shadow: none; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to course content</a>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">UC San Diego · Halıcıoğlu Data Science Institute</div>
+        <h1>DSC 261: Responsible Data Science</h1>
+        <p class="subtitle">Trustworthy machine learning in the era of large language models — from evaluation contracts and uncertainty to privacy, agent security, monitoring, and AI control.</p>
+        <div class="hero-badges" aria-label="Course highlights">
+          <span class="hero-badge">Fall 2026</span>
+          <span class="hero-badge">20 technical meetings</span>
+          <span class="hero-badge">Project-based</span>
+        </div>
+      </div>
+      <aside class="logistics" aria-label="Course logistics">
+        <h2>Course logistics</h2>
+        <div class="logistics-row"><span>Instructor</span><strong><a href="https://bsalimi.github.io/">Babak Salimi</a></strong></div>
+        <div class="logistics-row"><span>Quarter</span><strong>Fall 2026</strong></div>
+        <div class="logistics-row"><span>Instruction</span><strong>Sep 24 – Dec 4</strong></div>
+        <div class="logistics-row"><span>Meeting time / room</span><strong><a href="https://students.ucsd.edu/academics/enroll/">TSS &amp; Canvas</a></strong></div>
+        <div class="logistics-row"><span>Course hub</span><strong><a href="https://canvas.ucsd.edu/">Canvas</a></strong></div>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="subnav" aria-label="Course sections">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#outcomes">Outcomes</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#grading">Grading</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#policies">Policies</a></li>
+      <li><a href="#resources">Resources</a></li>
+    </ul>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="about">
+      <span class="section-kicker">Course description</span>
+      <h2>Trustworthiness is a claim that must survive contact with a real system.</h2>
+      <p class="lead lede-strong">DSC 261 is an evidence-first technical course about evaluating, attacking, defending, inspecting, monitoring, and controlling deployed machine-learning systems. The course focuses on modern language models and agents, but the central discipline is broader: define the system boundary, state a falsifiable trust claim, choose valid evidence, and make an accountable decision.</p>
+      <p class="lead">Foundations are introduced only when a paper or experiment needs them. Most meetings center on primary research from leading venues and end with an executable object: an evaluation contract, metric, estimator, attack, defense, intervention, monitor, or control protocol.</p>
+
+      <div class="grid three">
+        <article class="card card-accent">
+          <div class="number">1</div>
+          <h3>Evidence before adjectives</h3>
+          <p>“Safe,” “fair,” “robust,” and “private” are not labels. Students learn to scope each claim to a system, operating context, adversary, metric, threshold, and uncertainty statement.</p>
+        </article>
+        <article class="card card-accent teal">
+          <div class="number">2</div>
+          <h3>Primary papers, used technically</h3>
+          <p>Seminal and recent papers supply mechanisms, figures, estimators, experiments, and failure boundaries—not just discussion prompts.</p>
+        </article>
+        <article class="card card-accent gold">
+          <div class="number">3</div>
+          <h3>One evidence-producing project</h3>
+          <p>Teams investigate a real LLM system by measuring, auditing, attacking, defending, inspecting, monitoring, or controlling it.</p>
+        </article>
+      </div>
+
+      <div class="callout"><strong>Course format:</strong> instructor-led technical lectures, structured paper responses, hands-on problem sets, and a quarter-long project. There are <strong>no student paper presentations</strong>. Students present their own project and evidence at the end of the quarter.</div>
+    </section>
+
+    <section id="outcomes">
+      <span class="section-kicker">Learning outcomes</span>
+      <h2>What students should be able to do</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Specify and evaluate</h3>
+          <ul>
+            <li>Reconstruct the relevant model, data, tools, permissions, and deployment boundary.</li>
+            <li>Translate a vague trust claim into scenarios, metrics, thresholds, intervals, and failure events.</li>
+            <li>Diagnose construct-validity, contamination, aggregation, and judge-bias failures.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Attack and defend</h3>
+          <ul>
+            <li>Implement or reproduce a scoped attack, audit, intervention, monitor, or control protocol.</li>
+            <li>Compare defenses under adaptive re-attack and account for utility costs.</li>
+            <li>Make a deployment recommendation whose evidence and limitations are explicit.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="callout warn"><strong>Prerequisites:</strong> machine learning, probability, linear algebra, and fluent Python. Specialized refreshers appear just in time; the course does not spend the quarter rebuilding general ML foundations.</div>
+    </section>
+
+    <section id="schedule">
+      <span class="section-kicker">Calendar</span>
+      <h2>Twenty-meeting technical sequence</h2>
+      <p class="lead">The reading list prioritizes archival papers from top venues. Fast-moving technical reports are clearly labeled as frontier briefings. Dates follow the UC San Diego Fall 2026 academic calendar and the planned Tuesday/Thursday sequence; TSS and Canvas remain authoritative for meeting logistics and any calendar change.</p>
+
+      <div class="table-wrap">
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th>Meeting</th>
+              <th>Date</th>
+              <th>Topic</th>
+              <th>Core papers and sources</th>
+              <th>Executable object</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="session-no">01</td><td class="date">Thu · Sep 24</td>
+              <td><span class="module-tag">M1 · Course opening</span><div class="topic">Why responsible data science is a technical discipline</div></td>
+              <td>
+                <span class="reading"><a href="https://facctconference.org/static/pdfs_2022/facct22-3533088.pdf">Taxonomy of Risks Posed by Language Models</a><small>Weidinger et al. · FAccT 2022 · optional risk map</small></span>
+                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/cce0e917b050208170151f77b497fc71-Abstract-Conference.html">Scalable Extraction of Training Data from Aligned, Production Language Models</a><small>Nasr et al. · ICLR 2025</small></span>
+              </td>
+              <td class="deliverable">Machine-readable incident reconstruction</td>
+            </tr>
+            <tr>
+              <td class="session-no">02</td><td class="date">Tue · Sep 29</td>
+              <td><span class="module-tag">M1 · Foundations</span><div class="topic">Reconstructing a deployed LLM system</div></td>
+              <td>
+                <span class="reading"><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a><small>Vaswani et al. · NeurIPS 2017</small></span>
+                <span class="reading"><a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">Language Models are Unsupervised Multitask Learners</a><small>Radford et al. · technical report 2019</small></span>
+                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html">Training Language Models to Follow Instructions with Human Feedback</a><small>Ouyang et al. · NeurIPS 2022</small></span>
+              </td>
+              <td class="deliverable">Versioned, replayable system trace</td>
+            </tr>
+            <tr>
+              <td class="session-no">03</td><td class="date">Thu · Oct 1</td>
+              <td><span class="module-tag">M2 · Evaluation</span><div class="topic">Evaluation validity: what does the score measure?</div></td>
+              <td>
+                <span class="reading"><a href="https://openreview.net/forum?id=iO4LZibEqW">Holistic Evaluation of Language Models</a><small>Liang et al. · TMLR 2023</small></span>
+                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/63cb9921eecf51bfad27a99b2c53dd6d-Abstract-Datasets_and_Benchmarks.html">DecodingTrust</a><small>Wang et al. · NeurIPS 2023 Datasets &amp; Benchmarks</small></span>
+              </td>
+              <td class="deliverable">Falsifiable evaluation contract</td>
+            </tr>
+            <tr>
+              <td class="session-no">04</td><td class="date">Tue · Oct 6</td>
+              <td><span class="module-tag">M2 · Evaluation</span><div class="topic">Hallucination, uncertainty, and abstention</div></td>
+              <td>
+                <span class="reading"><a href="https://aclanthology.org/2022.acl-long.229/">TruthfulQA</a><small>Lin, Hilton &amp; Evans · ACL 2022</small></span>
+                <span class="reading"><a href="https://www.nature.com/articles/s41586-024-07421-0">Detecting Hallucinations Using Semantic Entropy</a><small>Farquhar et al. · Nature 2024</small></span>
+                <span class="reading"><a href="https://www.nature.com/articles/s41586-026-10549-w">Accuracy Incentivizes Hallucinations</a><small>Kalai et al. · Nature 2026</small></span>
+              </td>
+              <td class="deliverable">Risk–coverage and abstention rule</td>
+            </tr>
+            <tr>
+              <td class="session-no">05</td><td class="date">Thu · Oct 8</td>
+              <td><span class="module-tag">M2 · Verification</span><div class="topic">Grounding, citations, and claim verification</div></td>
+              <td>
+                <span class="reading"><a href="https://aclanthology.org/2023.emnlp-main.398/">Enabling LLMs to Generate Text with Citations (ALCE)</a><small>Gao et al. · EMNLP 2023</small></span>
+                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html">Self-RAG</a><small>Asai et al. · ICLR 2024</small></span>
+              </td>
+              <td class="deliverable">Claim–evidence verifier loop</td>
+            </tr>
+            <tr>
+              <td class="session-no">06</td><td class="date">Tue · Oct 13</td>
+              <td><span class="module-tag">M3 · Alignment</span><div class="topic">Post-training as an optimization substrate</div></td>
+              <td>
+                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html">Training Language Models to Follow Instructions with Human Feedback</a><small>Ouyang et al. · NeurIPS 2022</small></span>
+                <span class="reading"><a href="https://arxiv.org/abs/2212.08073">Constitutional AI</a><small>Bai et al. · frontier briefing 2022</small></span>
+              </td>
+              <td class="deliverable">Optimization-pipeline trust-boundary audit</td>
+            </tr>
+            <tr>
+              <td class="session-no">07</td><td class="date">Thu · Oct 15</td>
+              <td><span class="module-tag">M3 · Alignment</span><div class="topic">Reward hacking and overoptimization</div></td>
+              <td><span class="reading"><a href="https://proceedings.mlr.press/v202/gao23h.html">Scaling Laws for Reward Model Overoptimization</a><small>Gao et al. · ICML 2023</small></span></td>
+              <td class="deliverable">Proxy-versus-gold stress test</td>
+            </tr>
+            <tr>
+              <td class="session-no">08</td><td class="date">Tue · Oct 20</td>
+              <td><span class="module-tag">M3 · Oversight</span><div class="topic">Weak supervision and scalable oversight</div></td>
+              <td>
+                <span class="reading"><a href="https://proceedings.mlr.press/v235/burns24a.html">Weak-to-Strong Generalization</a><small>Burns et al. · ICML 2024</small></span>
+                <span class="reading"><a href="https://proceedings.mlr.press/v235/khan24a.html">Debating with More Persuasive LLMs Leads to More Truthful Answers</a><small>Khan et al. · ICML 2024</small></span>
+              </td>
+              <td class="deliverable">Oversight protocol and failure analysis</td>
+            </tr>
+            <tr>
+              <td class="session-no">09</td><td class="date">Thu · Oct 22</td>
+              <td><span class="module-tag">M4 · Robustness</span><div class="topic">Adaptive attack–defense evaluation</div></td>
+              <td>
+                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/fd6613131889a4b656206c50a8bd7790-Abstract-Conference.html">Jailbroken</a><small>Wei, Haghtalab &amp; Steinhardt · NeurIPS 2023</small></span>
+                <span class="reading"><a href="https://proceedings.mlr.press/v235/mazeika24a.html">HarmBench</a><small>Mazeika et al. · ICML 2024</small></span>
+              </td>
+              <td class="deliverable">Adaptive red-team evaluation contract</td>
+            </tr>
+            <tr>
+              <td class="session-no">10</td><td class="date">Tue · Oct 27</td>
+              <td><span class="module-tag">M4 · Robustness</span><div class="topic">Backdoors and data poisoning</div></td>
+              <td><span class="reading"><a href="https://proceedings.mlr.press/v202/wan23b.html">Poisoning Language Models During Instruction Tuning</a><small>Wan et al. · ICML 2023</small></span></td>
+              <td class="deliverable">Poison-budget and persistence experiment</td>
+            </tr>
+            <tr>
+              <td class="session-no">11</td><td class="date">Thu · Oct 29</td>
+              <td><span class="module-tag">M5 · Interpretability</span><div class="topic">Causal tracing and model editing</div></td>
+              <td>
+                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/6f1d43d5a82a37e89b0665b33bf3a182-Abstract-Conference.html">Locating and Editing Factual Associations in GPT (ROME)</a><small>Meng et al. · NeurIPS 2022</small></span>
+                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/3927bbdcf0e8d1fa8aa23c26f358a281-Abstract-Conference.html">Does Localization Inform Editing?</a><small>Hase et al. · NeurIPS 2023</small></span>
+              </td>
+              <td class="deliverable">Causal intervention with locality checks</td>
+            </tr>
+            <tr>
+              <td class="session-no">12</td><td class="date">Tue · Nov 3</td>
+              <td><span class="module-tag">M5 · Interpretability</span><div class="topic">Sparse features, circuits, and activation control</div></td>
+              <td>
+                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/42ef3308c230942d223c411adf182c88-Abstract-Conference.html">Scaling and Evaluating Sparse Autoencoders</a><small>Gao et al. · ICLR 2025</small></span>
+                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/84ca3f2d9d9bfca13f69b48ea63eb4a5-Abstract-Conference.html">Sparse Autoencoders Do Not Find Canonical Units</a><small>Leask et al. · ICLR 2025</small></span>
+              </td>
+              <td class="deliverable">Feature validation and steering audit</td>
+            </tr>
+            <tr>
+              <td class="session-no">13</td><td class="date">Thu · Nov 5</td>
+              <td><span class="module-tag">M5 · Monitoring</span><div class="topic">Chain-of-thought faithfulness and monitoring</div></td>
+              <td><span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/ed3fea9033a80fea1376299fa7863f4a-Abstract.html">Language Models Don’t Always Say What They Think</a><small>Turpin et al. · NeurIPS 2023</small></span></td>
+              <td class="deliverable">Monitor ROC curve under intervention</td>
+            </tr>
+            <tr>
+              <td class="session-no">14</td><td class="date">Tue · Nov 10</td>
+              <td><span class="module-tag">M6 · Privacy</span><div class="topic">Training-data extraction and memorization science</div></td>
+              <td>
+                <span class="reading"><a href="https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting">Extracting Training Data from Large Language Models</a><small>Carlini et al. · USENIX Security 2021</small></span>
+                <span class="reading"><a href="https://openreview.net/forum?id=vjel3nWP2a">Scalable Extraction from Production Language Models</a><small>Nasr et al. · ICLR 2025</small></span>
+              </td>
+              <td class="deliverable">Canary/extractability audit</td>
+            </tr>
+            <tr>
+              <td class="session-no">15</td><td class="date">Thu · Nov 12</td>
+              <td><span class="module-tag">M6 · Privacy</span><div class="topic">Honest privacy auditing</div></td>
+              <td>
+                <span class="reading"><a href="https://openreview.net/forum?id=TatRHT_1cK">Quantifying Memorization Across Neural Language Models</a><small>Carlini et al. · ICLR 2023</small></span>
+                <span class="reading"><a href="https://openreview.net/forum?id=av0D19pSkU">Do Membership Inference Attacks Work on LLMs?</a><small>Duan et al. · COLM 2024</small></span>
+              </td>
+              <td class="deliverable">Controlled privacy-audit protocol</td>
+            </tr>
+            <tr>
+              <td class="session-no">16</td><td class="date">Tue · Nov 17</td>
+              <td><span class="module-tag">M6 · Attribution</span><div class="topic">Data attribution and measured deletion</div></td>
+              <td>
+                <span class="reading"><a href="https://aclanthology.org/2022.acl-long.577/">Deduplicating Training Data Makes Language Models Better</a><small>Lee et al. · ACL 2022</small></span>
+                <span class="reading"><a href="https://openreview.net/forum?id=B41hNBoWLo">TOFU: A Task of Fictitious Unlearning for LLMs</a><small>Maini et al. · COLM 2024</small></span>
+              </td>
+              <td class="deliverable">Deletion efficacy and utility-retention test</td>
+            </tr>
+            <tr>
+              <td class="session-no">17</td><td class="date">Thu · Nov 19</td>
+              <td><span class="module-tag">M7 · Agent security</span><div class="topic">Prompt injection by design</div></td>
+              <td>
+                <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/97091a5177d8dc64b1da8bf3e1f6fb54-Abstract-Datasets_and_Benchmarks_Track.html">AgentDojo</a><small>Debenedetti et al. · NeurIPS 2024 D&amp;B</small></span>
+                <span class="reading"><a href="https://satml.org/2026/program/">Defeating Prompt Injections by Design (CaMeL)</a><small>Debenedetti et al. · IEEE SaTML 2026</small></span>
+              </td>
+              <td class="deliverable">Control/data-flow threat model</td>
+            </tr>
+            <tr>
+              <td class="session-no">18</td><td class="date">Tue · Nov 24</td>
+              <td><span class="module-tag">M7 · Agent reliability</span><div class="topic">Delegation and multi-agent failure</div></td>
+              <td>
+                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/c493d23af93118975cdbc32cbe7323f5-Abstract-Conference.html">AgentHarm</a><small>Andriushchenko et al. · ICLR 2025</small></span>
+                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/7274ed909a312d4d869cc328ad1c5f04-Abstract-Conference.html">ToolEmu</a><small>Ruan et al. · ICLR 2024</small></span>
+                <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/1b126cc38b8638e07bef37e7b2bb72bf-Abstract-Conference.html">τ-bench</a><small>Yao et al. · ICLR 2025</small></span>
+              </td>
+              <td class="deliverable">Repeated-trial trajectory evaluation</td>
+            </tr>
+            <tr class="holiday"><td>—</td><td>Thu · Nov 26</td><td colspan="3">Thanksgiving holiday — no class</td></tr>
+            <tr>
+              <td class="session-no">19</td><td class="date">Tue · Dec 1</td>
+              <td><span class="module-tag">M8 · Misalignment</span><div class="topic">Hidden objectives and emergent misalignment</div></td>
+              <td>
+                <span class="reading"><a href="https://www.nature.com/articles/s41586-025-09937-5">Training on Narrow Tasks Can Lead to Broad Misalignment</a><small>Betley et al. · Nature 2026</small></span>
+                <span class="reading"><a href="https://arxiv.org/abs/2412.14093">Alignment Faking in Large Language Models</a><small>Greenblatt et al. · frontier briefing 2024</small></span>
+              </td>
+              <td class="deliverable">Elicitation plan and behavioral distinguisher</td>
+            </tr>
+            <tr>
+              <td class="session-no">20</td><td class="date">Thu · Dec 3</td>
+              <td><span class="module-tag">M8 · AI control</span><div class="topic">Adversarial control protocols</div></td>
+              <td><span class="reading"><a href="https://proceedings.mlr.press/v235/greenblatt24a.html">AI Control: Improving Safety Despite Intentional Subversion</a><small>Greenblatt et al. · ICML 2024</small></span></td>
+              <td class="deliverable">Safety–usefulness control frontier</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><strong>Slides and course artifacts:</strong> released through Canvas as they are finalized. Paper links above point to primary or official records whenever available.</div>
+    </section>
+
+    <section id="project">
+      <span class="section-kicker">Quarter-long work</span>
+      <h2>The project is the spine of the course.</h2>
+      <p class="lead lede-strong">Small teams will make and test one technically precise trust claim about a real LLM system. A successful project produces evidence—not a survey—and ends with a reproducible artifact, a concise report, and an in-person project presentation.</p>
+
+      <div class="grid three">
+        <article class="card card-accent"><h3>Measure or audit</h3><p>Design a valid evaluation, uncertainty study, privacy audit, fairness audit, attribution test, or monitor.</p></article>
+        <article class="card card-accent teal"><h3>Attack or defend</h3><p>Implement an adaptive red-team evaluation, poisoning experiment, prompt-injection defense, or robust-refusal protocol.</p></article>
+        <article class="card card-accent gold"><h3>Inspect or control</h3><p>Test an interpretability claim, intervention, agent sandbox, escalation rule, or adversarial control protocol.</p></article>
+      </div>
+
+      <div class="timeline" aria-label="Project milestones">
+        <div class="timeline-item"><div class="timeline-when">Weeks 1–2</div><div><h3>Question and system boundary</h3><p>Form teams, identify the system and stakeholders, state the claim, define the operating context, and name the failure event.</p></div></div>
+        <div class="timeline-item"><div class="timeline-when">Week 3</div><div><h3>Project proposal</h3><p>Submit a concise proposal with primary sources, threat model, variables, feasibility check, and collaboration plan.</p></div></div>
+        <div class="timeline-item"><div class="timeline-when">Weeks 4–5</div><div><h3>Evaluation contract and pilot</h3><p>Freeze the scenarios, metrics, baselines, thresholds, and analysis plan; run a small pilot before scaling.</p></div></div>
+        <div class="timeline-item"><div class="timeline-when">Week 7</div><div><h3>Mid-quarter evidence review</h3><p>Show an executable artifact and preliminary evidence; document negative results, validity threats, and necessary redesign.</p></div></div>
+        <div class="timeline-item"><div class="timeline-when">Weeks 9–10</div><div><h3>Final study and reproducibility package</h3><p>Complete the study, preserve configurations and raw outputs, and prepare a defensible conclusion with explicit boundaries.</p></div></div>
+        <div class="timeline-item"><div class="timeline-when">Finals week</div><div><h3>Project presentations</h3><p>Each team presents its question, method, strongest evidence, failure boundary, and deployment implication. The exact presentation schedule will be posted on Canvas.</p></div></div>
+      </div>
+      <div class="callout project"><strong>No student paper presentations.</strong> Paper teaching remains instructor-led. Student presentation time is reserved for original project work and the evidence each team produced.</div>
+    </section>
+
+    <section id="grading">
+      <span class="section-kicker">Assessment</span>
+      <h2>Grading emphasizes execution and evidence.</h2>
+      <p class="lead">This public structure explains the intended balance. Canvas is authoritative for exact deadlines, rubrics, and any instructor-announced adjustment.</p>
+      <div class="table-wrap">
+        <table class="grade-table">
+          <thead><tr><th>Component</th><th>Weight</th><th>What counts</th></tr></thead>
+          <tbody>
+            <tr><td>Technical problem sets and labs</td><td>30%</td><td>Executable evaluation, attack, defense, interpretation, privacy, and control exercises.</td></tr>
+            <tr><td>Structured paper responses</td><td>10%</td><td>Short mechanism–evidence–boundary analyses submitted before selected meetings.</td></tr>
+            <tr><td>Project proposal</td><td>5%</td><td>Question, system boundary, related work, threat model, feasibility, and collaboration plan.</td></tr>
+            <tr><td>Project evaluation contract and checkpoint</td><td>15%</td><td>Frozen measurement plan, pilot, preliminary evidence, and revision after feedback.</td></tr>
+            <tr><td>Final project artifact and report</td><td>25%</td><td>Reproducible implementation, rigorous evidence, validity analysis, and precise conclusions.</td></tr>
+            <tr><td>Project presentation</td><td>10%</td><td>Clear technical story, evidence, boundaries, and response to questions.</td></tr>
+            <tr><td>Participation and project feedback</td><td>5%</td><td>Prepared discussion, peer feedback, and responsible collaboration.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="team">
+      <span class="section-kicker">People</span>
+      <h2>Instructional team</h2>
+      <div class="grid two">
+        <article class="card team-card">
+          <div class="avatar" aria-hidden="true">BS</div>
+          <div><h3>Babak Salimi</h3><div>Instructor</div><div class="muted"><a href="mailto:bsalimi@ucsd.edu">bsalimi@ucsd.edu</a> · Office hours announced on Canvas</div></div>
+        </article>
+        <article class="card team-card">
+          <div class="avatar" aria-hidden="true">TA</div>
+          <div><h3>Course assistants</h3><div>To be announced</div><div class="muted">Names, contact details, and office hours will be posted on Canvas.</div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="policies">
+      <span class="section-kicker">Working norms</span>
+      <h2>Technical ambition with responsible boundaries</h2>
+      <div class="grid two">
+        <article class="card"><h3>Responsible security research</h3><p>Red-team, extraction, prompt-injection, and agent experiments must remain within approved systems, accounts, data, and rate limits. Do not target people or services outside the assignment scope.</p></article>
+        <article class="card"><h3>Reproducibility</h3><p>Preserve model and dataset versions, prompts, code, seeds, configurations, raw outputs, exclusion rules, and analysis decisions. A result without provenance is not a finished result.</p></article>
+        <article class="card"><h3>Collaboration and attribution</h3><p>Teams may divide work, but every member must understand the full claim and evidence. Cite papers, code, datasets, tools, and external assistance precisely.</p></article>
+        <article class="card"><h3>Use of generative AI</h3><p>AI tools may support course work when their use follows the assignment and Canvas policy. Students remain responsible for verification, disclosure, source accuracy, and every submitted claim.</p></article>
+      </div>
+      <div class="callout warn"><strong>Accessibility and accommodations:</strong> students should contact the UC San Diego Office for Students with Disabilities and notify the instructor through the established course process. The Canvas syllabus contains the controlling policy language.</div>
+    </section>
+
+    <section id="resources">
+      <span class="section-kicker">Course links</span>
+      <h2>Resources</h2>
+      <ul class="resource-list">
+        <li><a href="https://canvas.ucsd.edu/">Canvas — announcements, slides, submissions, and authoritative deadlines</a></li>
+        <li><a href="https://students.ucsd.edu/academics/enroll/">UC San Diego enrollment and course logistics</a></li>
+        <li><a href="https://blink.ucsd.edu/instructors/resources/academic/calendars/2026.html">UC San Diego 2026–27 academic calendar</a></li>
+        <li><a href="https://datascience.ucsd.edu/graduate/graduate-courses/course-offerings/">HDSI graduate course offerings</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div><strong>DSC 261 · Responsible Data Science</strong><br>Fall 2026 · UC San Diego</div>
+      <div>Built from the DSC 100 course-site template · Last updated September 2026</div>
+    </div>
+  </footer>
+
+  <script>
+    const navLinks = [...document.querySelectorAll('.subnav a')];
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+    const updateActiveSection = () => {
+      const marker = window.scrollY + 110;
+      const current = [...sections].reverse().find(section => marker >= section.offsetTop) || sections[0];
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current.id}`));
+    };
+    navLinks.forEach(link => link.addEventListener('click', () => {
+      navLinks.forEach(candidate => candidate.classList.toggle('active', candidate === link));
+    }));
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    updateActiveSection();
+  </script>
+</body>
+</html>
