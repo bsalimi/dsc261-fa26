@@ -234,6 +234,11 @@
     }
     table { width: 100%; border-collapse: collapse; }
     .schedule { min-width: 980px; font-size: 13.5px; }
+    .calendar-table { min-width: 0; }
+    .calendar-table th:first-child,
+    .calendar-table td:first-child { width: 76px; }
+    .calendar-table th:nth-child(2),
+    .calendar-table td:nth-child(2) { width: 122px; }
     thead th {
       padding: 12px 13px;
       background: var(--navy);
@@ -375,6 +380,11 @@
       .logistics-row { display: grid; gap: 1px; }
       .logistics-row strong { text-align: left; }
       .hero h1 { font-size: 2.05rem; }
+      .calendar-table { font-size: 12px; }
+      .calendar-table th, .calendar-table td { padding: 9px 7px; }
+      .calendar-table th:first-child, .calendar-table td:first-child { width: 52px; }
+      .calendar-table th:nth-child(2), .calendar-table td:nth-child(2) { width: 86px; }
+      .calendar-table .module-tag { font-size: 9px; }
     }
     @media print {
       .subnav, .skip-link { display: none; }
@@ -414,8 +424,8 @@
   <nav class="subnav" aria-label="Course sections">
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#outcomes">Outcomes</a></li>
       <li><a href="#module1">Module 1</a></li>
+      <li><a href="#calendar">Calendar</a></li>
       <li><a href="#project">Project</a></li>
       <li><a href="#grading">Grading</a></li>
       <li><a href="#team">Team</a></li>
@@ -450,30 +460,6 @@
       </div>
 
       <div class="callout"><strong>Course format:</strong> instructor-led technical lectures, structured paper responses, hands-on problem sets, and a quarter-long project. There are <strong>no student paper presentations</strong>. Students present their own project and evidence at the end of the quarter.</div>
-    </section>
-
-    <section id="outcomes">
-      <span class="section-kicker">Learning outcomes</span>
-      <h2>What students should be able to do</h2>
-      <div class="grid two">
-        <article class="card">
-          <h3>Specify and evaluate</h3>
-          <ul>
-            <li>Reconstruct the relevant model, data, tools, permissions, and deployment boundary.</li>
-            <li>Translate a vague trust claim into scenarios, metrics, thresholds, intervals, and failure events.</li>
-            <li>Diagnose construct-validity, contamination, aggregation, and judge-bias failures.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Attack and defend</h3>
-          <ul>
-            <li>Implement or reproduce a scoped attack, audit, intervention, monitor, or control protocol.</li>
-            <li>Compare defenses under adaptive re-attack and account for utility costs.</li>
-            <li>Make a deployment recommendation whose evidence and limitations are explicit.</li>
-          </ul>
-        </article>
-      </div>
-      <div class="callout warn"><strong>Prerequisites:</strong> machine learning, probability, linear algebra, and fluent Python. Specialized refreshers appear just in time; the course does not spend the quarter rebuilding general ML foundations.</div>
     </section>
 
     <section id="module1">
@@ -519,6 +505,43 @@
           </div>
           <div class="session-output"><strong>In class:</strong> produce a versioned, replayable system trace spanning model, prompt, retrieval, tools, permissions, and observations.</div>
         </article>
+      </div>
+    </section>
+
+    <section id="calendar">
+      <span class="section-kicker">Course calendar</span>
+      <h2>Fall 2026 meetings</h2>
+      <p class="lead">The calendar currently lists dates and planned topics only. Paper, assignment, and slide links will be added as each module is released.</p>
+
+      <div class="table-wrap">
+        <table class="schedule calendar-table">
+          <thead>
+            <tr><th>Meeting</th><th>Date</th><th>Topic</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="session-no">01</td><td class="date">Thu · Sep 24</td><td><span class="module-tag">M1 · Course opening</span><div class="topic">Why responsible data science is a technical discipline</div></td></tr>
+            <tr><td class="session-no">02</td><td class="date">Tue · Sep 29</td><td><span class="module-tag">M1 · Foundations</span><div class="topic">Reconstructing a deployed LLM system</div></td></tr>
+            <tr><td class="session-no">03</td><td class="date">Thu · Oct 1</td><td><span class="module-tag">M2 · Evaluation</span><div class="topic">Evaluation validity: what does the score measure?</div></td></tr>
+            <tr><td class="session-no">04</td><td class="date">Tue · Oct 6</td><td><span class="module-tag">M2 · Evaluation</span><div class="topic">Hallucination, uncertainty, and abstention</div></td></tr>
+            <tr><td class="session-no">05</td><td class="date">Thu · Oct 8</td><td><span class="module-tag">M2 · Verification</span><div class="topic">Grounding, citations, and claim verification</div></td></tr>
+            <tr><td class="session-no">06</td><td class="date">Tue · Oct 13</td><td><span class="module-tag">M3 · Alignment</span><div class="topic">Post-training as an optimization substrate</div></td></tr>
+            <tr><td class="session-no">07</td><td class="date">Thu · Oct 15</td><td><span class="module-tag">M3 · Alignment</span><div class="topic">Reward hacking and overoptimization</div></td></tr>
+            <tr><td class="session-no">08</td><td class="date">Tue · Oct 20</td><td><span class="module-tag">M3 · Oversight</span><div class="topic">Weak supervision and scalable oversight</div></td></tr>
+            <tr><td class="session-no">09</td><td class="date">Thu · Oct 22</td><td><span class="module-tag">M4 · Robustness</span><div class="topic">Adaptive attack–defense evaluation</div></td></tr>
+            <tr><td class="session-no">10</td><td class="date">Tue · Oct 27</td><td><span class="module-tag">M4 · Robustness</span><div class="topic">Backdoors and data poisoning</div></td></tr>
+            <tr><td class="session-no">11</td><td class="date">Thu · Oct 29</td><td><span class="module-tag">M5 · Interpretability</span><div class="topic">Causal tracing and model editing</div></td></tr>
+            <tr><td class="session-no">12</td><td class="date">Tue · Nov 3</td><td><span class="module-tag">M5 · Interpretability</span><div class="topic">Sparse features, circuits, and activation control</div></td></tr>
+            <tr><td class="session-no">13</td><td class="date">Thu · Nov 5</td><td><span class="module-tag">M5 · Monitoring</span><div class="topic">Chain-of-thought faithfulness and monitoring</div></td></tr>
+            <tr><td class="session-no">14</td><td class="date">Tue · Nov 10</td><td><span class="module-tag">M6 · Privacy</span><div class="topic">Training-data extraction and memorization science</div></td></tr>
+            <tr><td class="session-no">15</td><td class="date">Thu · Nov 12</td><td><span class="module-tag">M6 · Privacy</span><div class="topic">Honest privacy auditing</div></td></tr>
+            <tr><td class="session-no">16</td><td class="date">Tue · Nov 17</td><td><span class="module-tag">M6 · Attribution</span><div class="topic">Data attribution and measured deletion</div></td></tr>
+            <tr><td class="session-no">17</td><td class="date">Thu · Nov 19</td><td><span class="module-tag">M7 · Agent security</span><div class="topic">Prompt injection by design</div></td></tr>
+            <tr><td class="session-no">18</td><td class="date">Tue · Nov 24</td><td><span class="module-tag">M7 · Agent reliability</span><div class="topic">Delegation and multi-agent failure</div></td></tr>
+            <tr class="holiday"><td>—</td><td class="date">Thu · Nov 26</td><td>Thanksgiving holiday — no class</td></tr>
+            <tr><td class="session-no">19</td><td class="date">Tue · Dec 1</td><td><span class="module-tag">M8 · Misalignment</span><div class="topic">Hidden objectives and emergent misalignment</div></td></tr>
+            <tr><td class="session-no">20</td><td class="date">Thu · Dec 3</td><td><span class="module-tag">M8 · AI control</span><div class="topic">Adversarial control protocols</div></td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
