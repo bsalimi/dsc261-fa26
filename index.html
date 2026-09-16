@@ -289,6 +289,8 @@
     .slides-button small { color: #cbd9e8; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
     .slides-button:hover { background: var(--blue); text-decoration: none; }
     .session-readings { padding-top: 2px; }
+    .session-readings.long-list { column-count: 2; column-gap: 18px; }
+    .session-readings.long-list .reading { break-inside: avoid; margin: 0 0 8px; }
     .session-output {
       margin-top: auto;
       padding: 11px 13px;
@@ -373,6 +375,7 @@
       .calendar-table th:first-child, .calendar-table td:first-child { width: 52px; }
       .calendar-table th:nth-child(2), .calendar-table td:nth-child(2) { width: 86px; }
       .calendar-table .module-tag { font-size: 9px; }
+      .session-readings.long-list { column-count: 1; }
     }
     @media print {
       .subnav, .skip-link { display: none; }
@@ -450,9 +453,9 @@
           </a>
           <h4>Primary papers and sources</h4>
           <div class="session-readings">
-            <span class="reading"><a href="https://facctconference.org/static/pdfs_2022/facct22-3533088.pdf">Taxonomy of Risks Posed by Language Models</a><small>Weidinger et al. · FAccT 2022 · optional risk map</small></span>
-            <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/cce0e917b050208170151f77b497fc71-Abstract-Conference.html">Scalable Extraction of Training Data from Aligned, Production Language Models</a><small>Nasr et al. · ICLR 2025</small></span>
-            <span class="reading"><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a><small>Vaswani et al. · NeurIPS 2017</small></span>
+            <span class="reading"><a href="https://arxiv.org/abs/1409.0473">Neural Machine Translation by Jointly Learning to Align and Translate</a><small>Bahdanau, Cho &amp; Bengio · ICLR 2015</small></span>
+            <span class="reading"><a href="https://papers.neurips.cc/paper/7181-attention-is-all-you-need">Attention Is All You Need</a><small>Vaswani et al. · NeurIPS 2017</small></span>
+            <span class="reading"><a href="https://aclanthology.org/N19-1423/">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a><small>Devlin et al. · NAACL-HLT 2019</small></span>
           </div>
           <div class="session-output"><strong>In class:</strong> reconstruct a failure as a machine-readable incident and identify the trust claim that failed.</div>
         </article>
@@ -468,9 +471,16 @@
             <span>Open Session 2 slides</span><small>PDF · 70 slides</small>
           </a>
           <h4>Primary papers and sources</h4>
-          <div class="session-readings">
+          <div class="session-readings long-list">
             <span class="reading"><a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">Language Models are Unsupervised Multitask Learners</a><small>Radford et al. · technical report 2019</small></span>
-            <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html">Training Language Models to Follow Instructions with Human Feedback</a><small>Ouyang et al. · NeurIPS 2022</small></span>
+            <span class="reading"><a href="https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html">Language Models are Few-Shot Learners</a><small>Brown et al. · NeurIPS 2020</small></span>
+            <span class="reading"><a href="https://openreview.net/forum?id=nZeVKeeFYf9">LoRA: Low-Rank Adaptation of Large Language Models</a><small>Hu et al. · ICLR 2022</small></span>
+            <span class="reading"><a href="https://proceedings.neurips.cc/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html">Training Language Models to Follow Instructions with Human Feedback</a><small>Ouyang et al. · NeurIPS 2022</small></span>
+            <span class="reading"><a href="https://proceedings.neurips.cc/paper/2022/hash/9d5609613524ecf4f15af0f7b31abca4-Abstract-Conference.html">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</a><small>Wei et al. · NeurIPS 2022</small></span>
+            <span class="reading"><a href="https://www.nature.com/articles/s41586-025-09422-z">DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning</a><small>Guo et al. · Nature 2025</small></span>
+            <span class="reading"><a href="https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a><small>Lewis et al. · NeurIPS 2020</small></span>
+            <span class="reading"><a href="https://openreview.net/forum?id=WE_vluYUL-X">ReAct: Synergizing Reasoning and Acting in Language Models</a><small>Yao et al. · ICLR 2023</small></span>
+            <span class="reading"><a href="https://openreview.net/forum?id=1i6ZCvflQJ">Cognitive Architectures for Language Agents</a><small>Sumers et al. · TMLR 2024</small></span>
           </div>
           <div class="session-output"><strong>In class:</strong> produce a versioned, replayable system trace spanning model, prompt, retrieval, tools, permissions, and observations.</div>
         </article>
