@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 1 · Compact Foundations Review — Trustworthy ML in the Era of LLMs - Slidev</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Fraunces:wght@200;400;600&family=Fira+Code:wght@200;400;600&display=swap" type="text/css">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/bbc.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/char_ai.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/sanction110k.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/deloitte.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/avianca.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/carlini.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/anthropic15b.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/hp96.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/chatgptleak.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/grok.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/leak300m.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/echoleak.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/news/amazon-bias.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/ngram-counts.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/ngram-generated.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/rnn-unrolled.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/lstm-cell.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/bpe-merge.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/tokenizer-live.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/glitch-token.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/token-fairness.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/seq2seq-arch.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/prelim/seq2seq-bottleneck.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/titles/bahdanau-title.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/titles/attention-title.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/bahdanau-fig1-model.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/bahdanau-fig3-alignment.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/attn-tab1-complexity.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/attn-fig1-encoder.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/attn-fig1-decoder.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/attn-tab2-bleu.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/titles/bert-title.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/bert-fig3-arch-comparison.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-1/figures/module1/bert-fig1-pretrain-finetune.png">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta property="slidev:version" content="52.16.0">
+<meta name="description" content="&quot;Trustworthy Machine Learning in the Era of LLMs\nModule 1 — Compact V3 foundations review candidate\nTwo-meeting first-pass path with a supplemental horizon and optional induction-head appendix\n&quot;">
+<meta property="og:title" content="Module 1 · Compact Foundations Review — Trustworthy ML in the Era of LLMs - Slidev">
+<meta property="og:description" content="&quot;Trustworthy Machine Learning in the Era of LLMs\nModule 1 — Compact V3 foundations review candidate\nTwo-meeting first-pass path with a supplemental horizon and optional induction-head appendix\n&quot;">  <script type="module" crossorigin src="/dsc261-fa26/slides/module-1/session-1/assets/index-2Jpyh3Ww.js"></script>
+  <link rel="modulepreload" crossorigin href="/dsc261-fa26/slides/module-1/session-1/assets/rolldown-runtime-QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/dsc261-fa26/slides/module-1/session-1/assets/utils-CBzEIGXJ.js">
+  <link rel="modulepreload" crossorigin href="/dsc261-fa26/slides/module-1/session-1/assets/modules/shiki-C9o-BCZt.js">
+  <link rel="modulepreload" crossorigin href="/dsc261-fa26/slides/module-1/session-1/assets/modules/vue-Ar4Y_3NW.js">
+  <link rel="stylesheet" crossorigin href="/dsc261-fa26/slides/module-1/session-1/assets/modules/shiki-BrmBd2_v.css">
+  <link rel="stylesheet" crossorigin href="/dsc261-fa26/slides/module-1/session-1/assets/index-BI65ZKa1.css">
+</head>
+<body>
+  <div id="app"></div>
+  <div id="mermaid-rendering-container"></div>
+  
+</body>
+</html>

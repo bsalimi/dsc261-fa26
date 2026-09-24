@@ -1,0 +1,473 @@
+[
+  {
+    "id": "fail-gcg-jailbreak-all",
+    "file": "/figures/module1/fail-gcg-jailbreak-all.png",
+    "figure": "Figure 1",
+    "caption": "One adversarial suffix jailbreaks ChatGPT, Claude, Bard & Llama-2",
+    "page": 2,
+    "px": [
+      1992,
+      1352
+    ],
+    "title": "Universal and Transferable Adversarial Attacks on Aligned LLMs (GCG)",
+    "authors": "Zou, Wang, Carlini, et al.",
+    "venue": "2023",
+    "arxiv": "2307.15043"
+  },
+  {
+    "id": "fail-nasr-chatgpt-poem",
+    "file": "/figures/module1/fail-nasr-chatgpt-poem.png",
+    "figure": "Figure 5",
+    "caption": "ChatGPT 'repeat poem forever' diverges and dumps memorized PII",
+    "page": 9,
+    "px": [
+      968,
+      708
+    ],
+    "title": "Scalable Extraction of Training Data from (Production) LLMs",
+    "authors": "Nasr, Carlini, et al.",
+    "venue": "2023",
+    "arxiv": "2311.17035"
+  },
+  {
+    "id": "fail-promptinject-threat",
+    "file": "/figures/module1/fail-promptinject-threat.png",
+    "figure": "Figure 2",
+    "caption": "Indirect prompt injection: hidden instructions in retrieved content",
+    "page": 3,
+    "px": [
+      2032,
+      760
+    ],
+    "title": "Compromising Real-World LLM-Integrated Apps with Indirect Prompt Injection",
+    "authors": "Greshake, Abdelnabi, et al.",
+    "venue": "2023",
+    "arxiv": "2302.12173"
+  },
+  {
+    "id": "fail-pkghalluc-rates",
+    "file": "/figures/module1/fail-pkghalluc-rates.png",
+    "figure": "Figure 2",
+    "caption": "Hallucinated-package rates across 16 LLMs (commercial ~5%, open ~22%)",
+    "page": 7,
+    "px": [
+      992,
+      496
+    ],
+    "title": "We Have a Package for You! (package hallucination / slopsquatting)",
+    "authors": "Spracklen et al.",
+    "venue": "USENIX Security 2025",
+    "arxiv": "2406.10279"
+  },
+  {
+    "id": "fail-poison-curves",
+    "file": "/figures/module1/fail-poison-curves.png",
+    "figure": "Figure 2",
+    "caption": "~250 poisoned docs backdoor LLMs of any size (600M\u201313B)",
+    "page": 3,
+    "px": [
+      1800,
+      592
+    ],
+    "title": "Poisoning attacks on LLMs require a near-constant number of samples",
+    "authors": "Anthropic / UK AISI / Alan Turing Institute",
+    "venue": "2025",
+    "arxiv": "2510.07192"
+  },
+  {
+    "id": "carlini-fig1-extraction",
+    "file": "/figures/module1/carlini-fig1-extraction.png",
+    "figure": "Figure 1",
+    "caption": "Memorized training data (incl. PII) extracted from GPT-2 by querying",
+    "page": 1,
+    "px": [
+      1040,
+      808
+    ],
+    "title": "Extracting Training Data from Large Language Models",
+    "authors": "Carlini, Tram\u00e8r, Wallace, et al.",
+    "venue": "USENIX Security 2021",
+    "arxiv": "2012.07805"
+  },
+  {
+    "id": "bahdanau-fig1-model",
+    "file": "/figures/module1/bahdanau-fig1-model.png",
+    "figure": "Figure 1",
+    "caption": "The align-and-translate model generating the t-th target word",
+    "page": 3,
+    "px": [
+      664,
+      632
+    ],
+    "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+    "authors": "Bahdanau, Cho, Bengio",
+    "venue": "ICLR 2015",
+    "arxiv": "1409.0473"
+  },
+  {
+    "id": "bahdanau-fig3-alignment",
+    "file": "/figures/module1/bahdanau-fig3-alignment.png",
+    "figure": "Figure 3",
+    "caption": "Sample alignment (attention) matrix for EN\u2192FR translation",
+    "page": 6,
+    "px": [
+      1136,
+      964
+    ],
+    "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+    "authors": "Bahdanau, Cho, Bengio",
+    "venue": "ICLR 2015",
+    "arxiv": "1409.0473"
+  },
+  {
+    "id": "attn-fig1-transformer",
+    "file": "/figures/module1/attn-fig1-transformer.png",
+    "figure": "Figure 1",
+    "caption": "The Transformer \u2014 model architecture",
+    "page": 3,
+    "px": [
+      960,
+      1352
+    ],
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin",
+    "venue": "NeurIPS 2017",
+    "arxiv": "1706.03762"
+  },
+  {
+    "id": "attn-fig2-attention",
+    "file": "/figures/module1/attn-fig2-attention.png",
+    "figure": "Figure 2",
+    "caption": "(left) Scaled Dot-Product Attention. (right) Multi-Head Attention",
+    "page": 4,
+    "px": [
+      1552,
+      868
+    ],
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin",
+    "venue": "NeurIPS 2017",
+    "arxiv": "1706.03762"
+  },
+  {
+    "id": "attn-fig3-heads",
+    "file": "/figures/module1/attn-fig3-heads.png",
+    "figure": "Figure 3",
+    "caption": "Attention follows long-distance dependencies (encoder self-attention)",
+    "page": 13,
+    "px": [
+      1696,
+      648
+    ],
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin",
+    "venue": "NeurIPS 2017",
+    "arxiv": "1706.03762"
+  },
+  {
+    "id": "attn-title",
+    "file": "/figures/module1/attn-title.png",
+    "figure": "Title",
+    "caption": "Attention Is All You Need \u2014 title, authors, abstract",
+    "page": 1,
+    "px": [
+      1728,
+      1200
+    ],
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin",
+    "venue": "NeurIPS 2017",
+    "arxiv": "1706.03762"
+  },
+  {
+    "id": "attn-tab1-complexity",
+    "file": "/figures/module1/attn-tab1-complexity.png",
+    "figure": "Table 1",
+    "caption": "Per-layer complexity, sequential ops, max path length",
+    "page": 6,
+    "px": [
+      1684,
+      632
+    ],
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin",
+    "venue": "NeurIPS 2017",
+    "arxiv": "1706.03762"
+  },
+  {
+    "id": "attn-tab2-bleu",
+    "file": "/figures/module1/attn-tab2-bleu.png",
+    "figure": "Table 2",
+    "caption": "WMT 2014 BLEU and training cost vs prior models",
+    "page": 8,
+    "px": [
+      1684,
+      976
+    ],
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin",
+    "venue": "NeurIPS 2017",
+    "arxiv": "1706.03762"
+  },
+  {
+    "id": "bert-fig1-pretrain-finetune",
+    "file": "/figures/module1/bert-fig1-pretrain-finetune.png",
+    "figure": "Figure 1",
+    "caption": "Overall pre-training and fine-tuning procedures for BERT",
+    "page": 3,
+    "px": [
+      1824,
+      776
+    ],
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": "Devlin, Chang, Lee, Toutanova",
+    "venue": "NAACL 2019",
+    "arxiv": "1810.04805"
+  },
+  {
+    "id": "bert-fig2-input",
+    "file": "/figures/module1/bert-fig2-input.png",
+    "figure": "Figure 2",
+    "caption": "BERT input representation = token + segment + position embeddings",
+    "page": 5,
+    "px": [
+      1824,
+      512
+    ],
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": "Devlin, Chang, Lee, Toutanova",
+    "venue": "NAACL 2019",
+    "arxiv": "1810.04805"
+  },
+  {
+    "id": "bert-fig3-arch-comparison",
+    "file": "/figures/module1/bert-fig3-arch-comparison.png",
+    "figure": "Figure 3",
+    "caption": "Differences in pre-training model architectures: BERT vs OpenAI GPT vs ELMo",
+    "page": 13,
+    "px": [
+      1824,
+      520
+    ],
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": "Devlin, Chang, Lee, Toutanova",
+    "venue": "NAACL 2019",
+    "arxiv": "1810.04805"
+  },
+  {
+    "id": "bert-tab1-glue",
+    "file": "/figures/module1/bert-tab1-glue.png",
+    "figure": "Table 1",
+    "caption": "GLUE test results (BERT vs prior state of the art)",
+    "page": 6,
+    "px": [
+      1832,
+      800
+    ],
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": "Devlin, Chang, Lee, Toutanova",
+    "venue": "NAACL 2019",
+    "arxiv": "1810.04805"
+  },
+  {
+    "id": "gpt2-fig1-zero-shot",
+    "file": "/figures/module1/gpt2-fig1-zero-shot.png",
+    "figure": "Figure 1",
+    "caption": "Zero-shot performance across four NLP tasks as model size increases",
+    "page": 2,
+    "px": [
+      1944,
+      564
+    ],
+    "title": "Language Models are Unsupervised Multitask Learners",
+    "authors": "Radford, Wu, Child, Luan, Amodei, Sutskever",
+    "venue": "OpenAI technical report, 2019",
+    "arxiv": "official-report"
+  },
+  {
+    "id": "gpt2-tab2-scale",
+    "file": "/figures/module1/gpt2-tab2-scale.png",
+    "figure": "Table 2",
+    "caption": "GPT-2 model family scales from 117M to 1.542B parameters",
+    "page": 4,
+    "px": [
+      812,
+      452
+    ],
+    "title": "Language Models are Unsupervised Multitask Learners",
+    "authors": "Radford, Wu, Child, Luan, Amodei, Sutskever",
+    "venue": "OpenAI technical report, 2019",
+    "arxiv": "official-report"
+  },
+  {
+    "id": "gpt2-fig4-train-test",
+    "file": "/figures/module1/gpt2-fig4-train-test.png",
+    "figure": "Figure 4",
+    "caption": "WebText train and test perplexity both improve with model scale",
+    "page": 9,
+    "px": [
+      940,
+      864
+    ],
+    "title": "Language Models are Unsupervised Multitask Learners",
+    "authors": "Radford, Wu, Child, Luan, Amodei, Sutskever",
+    "venue": "OpenAI technical report, 2019",
+    "arxiv": "official-report"
+  },
+  {
+    "id": "gpt2-fig5-memorization",
+    "file": "/figures/module1/gpt2-fig5-memorization.png",
+    "figure": "Figure 5",
+    "caption": "CDF of 8-gram overlap with WebText training data for samples and held-out text",
+    "page": 13,
+    "px": [
+      940,
+      944
+    ],
+    "title": "Language Models are Unsupervised Multitask Learners",
+    "authors": "Radford, Wu, Child, Luan, Amodei, Sutskever",
+    "venue": "OpenAI technical report, 2019",
+    "arxiv": "official-report"
+  },
+  {
+    "id": "induction-pattern",
+    "file": "/figures/module1/induction-pattern.png",
+    "figure": "Induction-head illustration",
+    "caption": "Prefix matching plus copying predicts the continuation of a repeated token pattern",
+    "page": 6,
+    "px": [
+      1524,
+      352
+    ],
+    "title": "In-context Learning and Induction Heads",
+    "authors": "Olsson, Elhage, Nanda, Joseph, DasSarma, et al.",
+    "venue": "Transformer Circuits Thread, 2022",
+    "arxiv": "2209.11895"
+  },
+  {
+    "id": "induction-phase-icl",
+    "file": "/figures/module1/induction-phase-icl.png",
+    "figure": "Phase-change plot",
+    "caption": "Models deeper than one layer show an abrupt improvement in in-context learning",
+    "page": 9,
+    "px": [
+      2084,
+      1008
+    ],
+    "title": "In-context Learning and Induction Heads",
+    "authors": "Olsson, Elhage, Nanda, Joseph, DasSarma, et al.",
+    "venue": "Transformer Circuits Thread, 2022",
+    "arxiv": "2209.11895"
+  },
+  {
+    "id": "induction-phase-heads",
+    "file": "/figures/module1/induction-phase-heads.png",
+    "figure": "Induction-head formation plot",
+    "caption": "Induction heads form during the same training phase change",
+    "page": 11,
+    "px": [
+      2084,
+      964
+    ],
+    "title": "In-context Learning and Induction Heads",
+    "authors": "Olsson, Elhage, Nanda, Joseph, DasSarma, et al.",
+    "venue": "Transformer Circuits Thread, 2022",
+    "arxiv": "2209.11895"
+  },
+  {
+    "id": "bahdanau-title",
+    "file": "/figures/module1/titles/bahdanau-title.png",
+    "figure": "Title crop",
+    "caption": "Paper title and author block",
+    "page": 1,
+    "px": [2106, 693],
+    "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+    "authors": "Bahdanau, Cho, Bengio",
+    "venue": "ICLR 2015",
+    "arxiv": "1409.0473"
+  },
+  {
+    "id": "attention-title-crop",
+    "file": "/figures/module1/titles/attention-title.png",
+    "figure": "Title crop",
+    "caption": "Paper title and author block",
+    "page": 1,
+    "px": [2106, 964],
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin",
+    "venue": "NeurIPS 2017",
+    "arxiv": "1706.03762"
+  },
+  {
+    "id": "bert-title",
+    "file": "/figures/module1/titles/bert-title.png",
+    "figure": "Title crop",
+    "caption": "Paper title and author block",
+    "page": 1,
+    "px": [2049, 672],
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": "Devlin, Chang, Lee, Toutanova",
+    "venue": "NAACL 2019",
+    "arxiv": "1810.04805"
+  },
+  {
+    "id": "gpt2-title",
+    "file": "/figures/module1/titles/gpt2-title.png",
+    "figure": "Title crop",
+    "caption": "Paper title and author block",
+    "page": 1,
+    "px": [1080, 220],
+    "title": "Language Models are Unsupervised Multitask Learners",
+    "authors": "Radford, Wu, Child, Luan, Amodei, Sutskever",
+    "venue": "OpenAI technical report, 2019",
+    "arxiv": "official-report"
+  },
+  {
+    "id": "induction-title",
+    "file": "/figures/module1/titles/induction-title.png",
+    "figure": "Title crop",
+    "caption": "Paper title, authors, and publication date",
+    "page": 1,
+    "px": [1040, 505],
+    "title": "In-context Learning and Induction Heads",
+    "authors": "Olsson, Elhage, Nanda, Joseph, DasSarma, et al.",
+    "venue": "Transformer Circuits Thread, 2022",
+    "arxiv": "2209.11895"
+  },
+  {
+    "id": "attn-fig1-encoder",
+    "file": "/figures/module1/attn-fig1-encoder.png",
+    "figure": "Figure 1 crop",
+    "caption": "Transformer encoder stack",
+    "page": 3,
+    "px": [470, 1040],
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani et al.",
+    "venue": "NeurIPS 2017",
+    "arxiv": "1706.03762"
+  },
+  {
+    "id": "attn-fig1-decoder",
+    "file": "/figures/module1/attn-fig1-decoder.png",
+    "figure": "Figure 1 crop",
+    "caption": "Transformer decoder stack",
+    "page": 3,
+    "px": [495, 1352],
+    "title": "Attention Is All You Need",
+    "authors": "Vaswani et al.",
+    "venue": "NeurIPS 2017",
+    "arxiv": "1706.03762"
+  },
+  {
+    "id": "amazon-bias-news",
+    "file": "/figures/module1/news/amazon-bias.png",
+    "figure": "Article screenshot",
+    "caption": "Amazon abandoned an experimental recruiting tool that learned gender bias",
+    "page": 1,
+    "px": [2560, 1120],
+    "title": "Amazon ditched AI recruiting tool that favored men for technical jobs",
+    "authors": "The Guardian, reporting Reuters",
+    "venue": "October 10, 2018",
+    "url": "https://www.theguardian.com/technology/2018/oct/10/amazon-hiring-ai-gender-bias-recruiting-engine"
+  }
+]

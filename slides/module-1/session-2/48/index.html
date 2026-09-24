@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSC 261 Module 1 Part Two · GPT-2 onward foundations - Slidev</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Fraunces:wght@200;400;600&family=Fira+Code:wght@200;400;600&display=swap" type="text/css">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/gpt2-title-authors.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/gpt2-figure-1.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/gpt3-title-authors.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/gpt3-figure-1-1.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/gpt3-table-2-2.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/gpt3-figure-1-3.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/lora-title-authors.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/lora-figure-1.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/lora-table-4.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/instructgpt-title-authors.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/instructgpt-figure-2.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/instructgpt-figure-1.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/cot-title-authors.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/cot-figure1.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/cot-figure3.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/cot-figure5.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/cot-figure4.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/deepseek-title.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/deepseek-grpo-extfig2.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/deepseek-pipeline-full.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/deepseek-fig1a-aime.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/rag-title-authors.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/rag-figure1-overview.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/rag-figure2-token-posterior.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/rag-table1-odqa.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/react-title-authors.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/react-figure1-qa-panels.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/react-table6-webshop-protocol.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/react-table1-qa-results.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/coala-title-authors.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/coala-figure1-agent-loop.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/coala-table1-productions.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/coala-figure3a-llm-call.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/coala-figure3b-prompt-chain.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/coala-figure3c-agent-loop.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/coala-figure4a-modules.png">
+<link rel="preload" as="image" href="/dsc261-fa26/slides/module-1/session-2/figures/module1-part2-gpt2-onward-part1-complete-render-01/coala-figure4b-decision-cycle.png">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta property="slidev:version" content="52.16.0">
+<meta name="description" content="&quot;Complete continuation after the accepted BERT endpoint.\nPart One teaching grammar. Internal instructor review only.\n&quot;">
+<meta property="og:title" content="DSC 261 Module 1 Part Two · GPT-2 onward foundations - Slidev">
+<meta property="og:description" content="&quot;Complete continuation after the accepted BERT endpoint.\nPart One teaching grammar. Internal instructor review only.\n&quot;">  <script type="module" crossorigin src="/dsc261-fa26/slides/module-1/session-2/assets/index-DYlDzd32.js"></script>
+  <link rel="modulepreload" crossorigin href="/dsc261-fa26/slides/module-1/session-2/assets/rolldown-runtime-QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/dsc261-fa26/slides/module-1/session-2/assets/utils-CBzEIGXJ.js">
+  <link rel="modulepreload" crossorigin href="/dsc261-fa26/slides/module-1/session-2/assets/modules/shiki-CHaY4-Hj.js">
+  <link rel="modulepreload" crossorigin href="/dsc261-fa26/slides/module-1/session-2/assets/modules/vue-9JWWMFRq.js">
+  <link rel="stylesheet" crossorigin href="/dsc261-fa26/slides/module-1/session-2/assets/modules/shiki-BrmBd2_v.css">
+  <link rel="stylesheet" crossorigin href="/dsc261-fa26/slides/module-1/session-2/assets/index-BjKq9MXT.css">
+</head>
+<body>
+  <div id="app"></div>
+  <div id="mermaid-rendering-container"></div>
+  
+</body>
+</html>
