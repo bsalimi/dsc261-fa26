@@ -15,7 +15,7 @@ Module 1 includes browser-presentable Slidev builds and PDF backups:
 - Session 1: `slides/module-1/session-1/1` (50 slides)
 - Session 2: `slides/module-1/session-2/1` (70 slides)
 
-Module 2, current first lecture: [Hallucination and factuality — Session 1](https://bsalimi.github.io/dsc261-fa26/slides/module-2/session-1/#1) (44 slides, five papers, 80 minutes).
+Module 2, current first lecture: [Hallucination in large language models — Session 1](https://bsalimi.github.io/dsc261-fa26/slides/module-2/session-1/#1) (45 slides, five papers, 80 minutes). Revised conceptual opening and resilient loading; [matching PDF](https://bsalimi.github.io/dsc261-fa26/slides/module-2/session-1/DSC261-Module2-Session1.pdf).
 
 This is the exact verified self-contained HTML, published at the instructor's explicit request on October 1, 2026. It includes presenter notes, light/dark themes and source-image enlargement. Its SHA-256 is `1e1d3a634334f4b1c8e66aab902ebbb6cad7ca452537dc00e0a565e57f3589c2`. See `slides/module-2/session-1/publication.json` for the public-copy record. Small labels on slides 19 and 30 should be enlarged while presenting. Publication does not assert a complete-module release or blanket figure-rights clearance.
 
