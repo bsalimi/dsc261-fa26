@@ -8,9 +8,13 @@ Public course website for **DSC 261: Responsible Data Science** at UC San Diego.
 
 The site uses the static, single-page structure and UC San Diego visual system of the DSC 100 course website. GitHub Pages serves `index.html` directly from the repository root.
 
-Course logistics, assignment deadlines, and submissions are managed through Canvas. The public site contains the course description, project structure, grading overview, policies, and public resources. Only Module 1 slides and primary materials are currently published; later module materials will be added after release.
+Course logistics, assignment deadlines, and submissions are managed through Canvas. The public site contains the course description, project structure, grading overview, policies, and public resources. Module 1 slides and primary materials are published on the homepage. The current Module 2 review deck is also available by direct link, as authorized by the instructor for sharing.
 
 Module 1 includes browser-presentable Slidev builds and PDF backups:
 
 - Session 1: `slides/module-1/session-1/1` (50 slides)
 - Session 2: `slides/module-1/session-2/1` (70 slides)
+
+Module 2: [Hallucination, grounding, and verification](https://bsalimi.github.io/dsc261-fa26/slides/module-2/#1) (86 slides).
+
+This is the unchanged, self-contained HTML presentation from the private source handoff at commit `67032a8`; its SHA-256 is `80ad420cae93dfd7f8f63d9a08fffa98c00ae8fce3daf16d0a889f4b39e650bc`. It includes the original presenter notes (`N`), light/dark themes (`D`), and figure enlargement. The public link requires no GitHub account. Publishing this review copy does not constitute a new scientific/content release approval. Source manifests and private workflow records remain in the source repository.
