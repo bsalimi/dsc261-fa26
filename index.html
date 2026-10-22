@@ -287,6 +287,8 @@
       font-weight: 800;
     }
     .slides-button small { color: #cbd9e8; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+    .module-pdf { flex-wrap: wrap; margin: 16px 0; }
+    .module-pdf small { white-space: normal; }
     .slides-button:hover { background: var(--blue); text-decoration: none; }
     .slides-download {
       align-self: flex-start;
@@ -423,6 +425,9 @@
       <li><a href="#about">About</a></li>
       <li><a href="#module1">Module 1</a></li>
       <li><a href="#module2">Module 2</a></li>
+      <li><a href="materials/module-2/uncertainty-lecture-slides.pdf">Module 2 PDF</a></li>
+      <li><a href="#module3">Module 3</a></li>
+      <li><a href="materials/module-3/grounding-lecture-slides.pdf">Module 3 PDF</a></li>
       <li><a href="#topics">Topics</a></li>
       <li><a href="#calendar">Calendar</a></li>
       <li><a href="#project">Project</a></li>
@@ -446,7 +451,7 @@
       <span class="section-kicker">Published course materials</span>
       <h2>Module 1: Course opening and compact foundations</h2>
       <p class="lead">Module 1 spans the first two meetings. It begins with concrete failures that motivate trustworthy machine learning, then develops only the model foundations needed to reason about modern language models and deployed LLM systems.</p>
-      <div class="callout"><strong>Currently available:</strong> Module 1 materials and the Module 2 uncertainty lecture PDF are published on this site. Additional module materials will be posted after they are released.</div>
+      <div class="callout"><strong>Currently available:</strong> Module 1 materials, the <a href="materials/module-2/uncertainty-lecture-slides.pdf">Module 2 Uncertainty PDF</a>, and the <a href="materials/module-3/grounding-lecture-slides.pdf">Module 3 Grounding PDF</a> (110 pages) are published. Additional module materials will be posted after they are released.</div>
 
       <div class="grid two module-materials">
         <article class="card card-accent session-card">
@@ -499,11 +504,10 @@
 
     <section id="module2">
       <span class="section-kicker">Published course materials</span>
-      <h2>Module 2: Evaluation, Uncertainty &amp; Grounding</h2>
+      <h2>Module 2: Uncertainty</h2>
+      <a class="slides-button module-pdf" href="materials/module-2/uncertainty-lecture-slides.pdf"><span>Download Module 2 PDF — Uncertainty</span><small>121 slides · Public PDF · No login needed</small></a>
       <h3>Lecture materials</h3>
       <div class="session-readings">
-        <span class="reading"><a href="slides/grounding/#1">Grounding Lecture Slides</a><small>105 slides · Finding, using, and checking evidence · Public audience version</small></span>
-        <span class="reading"><a href="materials/module-2/grounding-lecture-slides.pdf">Grounding Lecture Slides PDF</a><small>110 pages · Includes distinct replacement-reveal states</small></span>
         <span class="reading"><a href="materials/module-2/uncertainty-lecture-slides.pdf">Module 2 Uncertainty Lecture Slides PDF</a><small>121 slides · Uncertainty, calibration, selective answering, and abstention</small></span>
       </div>
       <h3 id="module2-readings">Reading list</h3>
@@ -521,6 +525,13 @@
         <span class="reading"><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/fb122bfc3f0127a94ded048b5b03496f-Abstract-Datasets_and_Benchmarks_Track.html">AbstentionBench: Reasoning LLMs Fail on Unanswerable Questions</a><small>Kirichenko et al. · NeurIPS 2025 Datasets and Benchmarks Track</small></span>
         <span class="reading"><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/615675cc6e94ddb1a783904fb178b5f6-Abstract-Conference.html">Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty</a><small>Damani et al. · ICLR 2026</small></span>
       </div>
+    </section>
+
+    <section id="module3">
+      <span class="section-kicker">Published course materials</span>
+      <h2>Module 3: Grounding</h2>
+      <a class="slides-button module-pdf" href="materials/module-3/grounding-lecture-slides.pdf"><span>Download Module 3 PDF — Grounding</span><small>110 pages · Public PDF · No login needed</small></a>
+      <p><a href="slides/grounding/#1">Open Module 3 Grounding slides in browser</a> · 105 slides</p>
       <h3 id="grounding-readings">Grounding reading list</h3>
       <p>Core Grounding lecture papers, in lecture order.</p>
       <div class="session-readings long-list">
@@ -541,40 +552,46 @@
     <section id="topics">
       <span class="section-kicker">Ordered curriculum</span>
       <h2>Course topics: evaluating concrete safety claims</h2>
-      <p class="lead">Eight modules connect evaluation and grounding to post-training, adversarial robustness, agent security, oversight, privacy, and control. Internal-model techniques are introduced where they help evaluate a concrete safety claim.</p>
+      <p class="lead">Nine modules connect evaluation and grounding to post-training, adversarial robustness, agent security, oversight, privacy, and control. Internal-model techniques are introduced where they help evaluate a concrete safety claim.</p>
       <div class="grid two">
         <article class="card card-accent">
           <h3>M1 · Foundations</h3>
           <ul><li>Why responsible data science is a technical discipline</li><li>Reconstructing a deployed LLM system</li></ul>
         </article>
         <article class="card card-accent teal">
-          <h3>M2 · Evaluation, Uncertainty &amp; Grounding</h3>
-          <ul><li>Evaluation validity</li><li>Hallucination, uncertainty and abstention</li><li>Grounding, citations and claim verification</li></ul>
+          <h3>M2 · Uncertainty</h3>
+          <ul><li>Evaluation validity</li><li>Hallucination, uncertainty and abstention</li></ul>
+          <a href="materials/module-2/uncertainty-lecture-slides.pdf">Download Module 2 PDF — Uncertainty</a>
+        </article>
+        <article class="card card-accent teal">
+          <h3>M3 · Grounding</h3>
+          <ul><li>Grounding, citations and claim verification</li></ul>
+          <a href="materials/module-3/grounding-lecture-slides.pdf">Download Module 3 PDF — Grounding</a>
         </article>
         <article class="card card-accent">
-          <h3>M3 · Alignment &amp; Post-training</h3>
+          <h3>M4 · Alignment &amp; Post-training</h3>
           <ul><li>SFT, RLHF, DPO and RL with verifiable rewards</li><li>Reward hacking, overoptimization, sycophancy and evaluation gaming</li></ul>
         </article>
         <article class="card card-accent teal">
-          <h3>M4 · Adversarial Robustness</h3>
+          <h3>M5 · Adversarial Robustness</h3>
           <ul><li>Adaptive attacks, jailbreaks and valid attack–defense evaluation</li><li>Data poisoning, backdoors and supply-chain attacks</li></ul>
         </article>
         <article class="card card-accent">
-          <h3>M5 · Agent Security &amp; Reliability</h3>
+          <h3>M6 · Agent Security &amp; Reliability</h3>
           <ul><li>Prompt injection and secure agent design</li><li>Agentic evaluation, capability elicitation and sandbox boundaries</li><li>Delegation, coordination and multi-agent failure</li></ul>
         </article>
         <article class="card card-accent teal">
-          <h3>M6 · Oversight &amp; Monitoring</h3>
+          <h3>M7 · Oversight &amp; Monitoring</h3>
           <ul><li>Weak supervision and scalable oversight</li><li>Reasoning faithfulness, activation probes and system logs</li></ul>
           <p>Combined session: selected mechanisms and evidence for concrete safety claims.</p>
         </article>
         <article class="card card-accent">
-          <h3>M7 · Privacy</h3>
+          <h3>M8 · Privacy</h3>
           <ul><li>Training-data extraction and memorization</li><li>Honest privacy auditing, attribution and measured deletion</li></ul>
           <p>Attribution and measured deletion are supporting material for the privacy session.</p>
         </article>
         <article class="card card-accent teal">
-          <h3>M8 · Misalignment &amp; Control</h3>
+          <h3>M9 · Misalignment &amp; Control</h3>
           <ul><li>Hidden objectives, alignment faking and emergent misalignment</li><li>AI control protocols, adversarial evaluations and safety cases</li></ul>
         </article>
       </div>
@@ -597,20 +614,20 @@
             <tr><td class="session-no">05</td><td class="date">Thu · Oct 8</td><td><span class="module-tag">M2 · Uncertainty</span><div class="topic">Uncertainty and abstention, continued</div></td></tr>
             <tr><td class="session-no">06</td><td class="date">Tue · Oct 13</td><td><span class="module-tag">M2 · Uncertainty</span><div class="topic">Uncertainty and abstention, continued</div></td></tr>
             <tr><td class="session-no">07</td><td class="date">Thu · Oct 15</td><td><span class="module-tag">M2 · Uncertainty</span><div class="topic">Uncertainty and abstention, continued</div></td></tr>
-            <tr><td class="session-no">08</td><td class="date">Tue · Oct 20</td><td><span class="module-tag">M2 · Grounding</span><div class="topic">Retrieval, citations and claim support</div></td></tr>
-            <tr><td class="session-no">09</td><td class="date">Thu · Oct 22</td><td><span class="module-tag">M2 · Grounding</span><div class="topic">Verification, calibrated decisions and abstention</div></td></tr>
-            <tr><td class="session-no">10</td><td class="date">Tue · Oct 27</td><td><span class="module-tag">M3 · Alignment &amp; Post-training</span><div class="topic">SFT, RLHF, DPO and RL with verifiable rewards</div></td></tr>
-            <tr><td class="session-no">11</td><td class="date">Thu · Oct 29</td><td><span class="module-tag">M3 · Alignment &amp; Post-training</span><div class="topic">Reward hacking, overoptimization, sycophancy and evaluation gaming</div></td></tr>
-            <tr><td class="session-no">12</td><td class="date">Tue · Nov 3</td><td><span class="module-tag">M4 · Adversarial Robustness</span><div class="topic">Adaptive attacks, jailbreaks and valid attack–defense evaluation</div></td></tr>
-            <tr><td class="session-no">13</td><td class="date">Thu · Nov 5</td><td><span class="module-tag">M4 · Adversarial Robustness</span><div class="topic">Data poisoning, backdoors and supply-chain attacks</div></td></tr>
-            <tr><td class="session-no">14</td><td class="date">Tue · Nov 10</td><td><span class="module-tag">M5 · Agent Security &amp; Reliability</span><div class="topic">Prompt injection and secure agent design</div></td></tr>
-            <tr><td class="session-no">15</td><td class="date">Thu · Nov 12</td><td><span class="module-tag">M5 · Agent Security &amp; Reliability</span><div class="topic">Agentic evaluation, capability elicitation and sandbox boundaries</div></td></tr>
-            <tr><td class="session-no">16</td><td class="date">Tue · Nov 17</td><td><span class="module-tag">M5 · Agent Security &amp; Reliability</span><div class="topic">Delegation, coordination and multi-agent failure</div></td></tr>
-            <tr><td class="session-no">17</td><td class="date">Thu · Nov 19</td><td><span class="module-tag">M6 · Oversight &amp; Monitoring</span><div class="topic">Weak supervision and scalable oversight; reasoning faithfulness, activation probes and system logs</div><small>Combined session: selected mechanisms and evidence for concrete safety claims.</small></td></tr>
-            <tr><td class="session-no">18</td><td class="date">Tue · Nov 24</td><td><span class="module-tag">M7 · Privacy</span><div class="topic">Training-data extraction, memorization and honest privacy auditing</div><small>Attribution and measured deletion are supporting material.</small></td></tr>
+            <tr><td class="session-no">08</td><td class="date">Tue · Oct 20</td><td><span class="module-tag">M3 · Grounding</span><div class="topic">Retrieval, citations and claim support</div><a href="materials/module-3/grounding-lecture-slides.pdf">Download Module 3 PDF — Grounding</a></td></tr>
+            <tr><td class="session-no">09</td><td class="date">Thu · Oct 22</td><td><span class="module-tag">M3 · Grounding</span><div class="topic">Verification, calibrated decisions and abstention</div><a href="materials/module-3/grounding-lecture-slides.pdf">Download Module 3 PDF — Grounding</a></td></tr>
+            <tr><td class="session-no">10</td><td class="date">Tue · Oct 27</td><td><span class="module-tag">M4 · Alignment &amp; Post-training</span><div class="topic">SFT, RLHF, DPO and RL with verifiable rewards</div></td></tr>
+            <tr><td class="session-no">11</td><td class="date">Thu · Oct 29</td><td><span class="module-tag">M4 · Alignment &amp; Post-training</span><div class="topic">Reward hacking, overoptimization, sycophancy and evaluation gaming</div></td></tr>
+            <tr><td class="session-no">12</td><td class="date">Tue · Nov 3</td><td><span class="module-tag">M5 · Adversarial Robustness</span><div class="topic">Adaptive attacks, jailbreaks and valid attack–defense evaluation</div></td></tr>
+            <tr><td class="session-no">13</td><td class="date">Thu · Nov 5</td><td><span class="module-tag">M5 · Adversarial Robustness</span><div class="topic">Data poisoning, backdoors and supply-chain attacks</div></td></tr>
+            <tr><td class="session-no">14</td><td class="date">Tue · Nov 10</td><td><span class="module-tag">M6 · Agent Security &amp; Reliability</span><div class="topic">Prompt injection and secure agent design</div></td></tr>
+            <tr><td class="session-no">15</td><td class="date">Thu · Nov 12</td><td><span class="module-tag">M6 · Agent Security &amp; Reliability</span><div class="topic">Agentic evaluation, capability elicitation and sandbox boundaries</div></td></tr>
+            <tr><td class="session-no">16</td><td class="date">Tue · Nov 17</td><td><span class="module-tag">M6 · Agent Security &amp; Reliability</span><div class="topic">Delegation, coordination and multi-agent failure</div></td></tr>
+            <tr><td class="session-no">17</td><td class="date">Thu · Nov 19</td><td><span class="module-tag">M7 · Oversight &amp; Monitoring</span><div class="topic">Weak supervision and scalable oversight; reasoning faithfulness, activation probes and system logs</div><small>Combined session: selected mechanisms and evidence for concrete safety claims.</small></td></tr>
+            <tr><td class="session-no">18</td><td class="date">Tue · Nov 24</td><td><span class="module-tag">M8 · Privacy</span><div class="topic">Training-data extraction, memorization and honest privacy auditing</div><small>Attribution and measured deletion are supporting material.</small></td></tr>
             <tr class="holiday"><td>—</td><td class="date">Thu · Nov 26</td><td>Thanksgiving holiday — no class</td></tr>
-            <tr><td class="session-no">19</td><td class="date">Tue · Dec 1</td><td><span class="module-tag">M8 · Misalignment &amp; Control</span><div class="topic">Hidden objectives, alignment faking and emergent misalignment</div></td></tr>
-            <tr><td class="session-no">20</td><td class="date">Thu · Dec 3</td><td><span class="module-tag">M8 · Misalignment &amp; Control</span><div class="topic">AI control protocols, adversarial evaluations and safety cases</div></td></tr>
+            <tr><td class="session-no">19</td><td class="date">Tue · Dec 1</td><td><span class="module-tag">M9 · Misalignment &amp; Control</span><div class="topic">Hidden objectives, alignment faking and emergent misalignment</div></td></tr>
+            <tr><td class="session-no">20</td><td class="date">Thu · Dec 3</td><td><span class="module-tag">M9 · Misalignment &amp; Control</span><div class="topic">AI control protocols, adversarial evaluations and safety cases</div></td></tr>
           </tbody>
         </table>
       </div>
