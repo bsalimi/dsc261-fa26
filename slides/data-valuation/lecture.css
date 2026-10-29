@@ -3,6 +3,10 @@
 
 .source-slide{padding:0!important;background:#fff!important}.source-original{position:absolute;inset:0;width:1280px;height:720px;max-width:none;object-fit:fill;display:block}.source-accessible{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}.source-slide .source-accessible{margin:0!important;padding:0!important}.wide-pipeline .figure{height:190px}
 
+.opener{padding-top:52px}.opener h1{font-size:41px;max-width:1140px;margin-bottom:32px}.layout-identity .figure{height:175px;margin:35px 0}.layout-identity .points li{font-size:28px;line-height:1.4;margin-bottom:27px}.layout-equation .figure,.layout-algorithm .figure{position:absolute;left:70px;top:235px;width:590px;height:350px;margin:0}.layout-equation .points,.layout-algorithm .points{position:absolute;left:710px;top:200px;width:475px;padding-left:24px;margin:0}.layout-equation .points li,.layout-algorithm .points li{font-size:25px;line-height:1.4;margin-bottom:24px}.layout-equation .notation{max-width:1120px}.layout-algorithm .figure{top:180px;height:450px}.layout-algorithm .points{top:210px}.layout-wide-pipeline .figure{height:190px}
+
+.layout-equation-band .figure{height:220px;margin:35px 0 26px}.layout-equation-band .points{margin-top:15px}.layout-equation-band .points li{font-size:25px;line-height:1.35;margin-bottom:22px}
+
 #mobile-controls{display:none}#help a{color:inherit;text-decoration:underline}@media(pointer:coarse),(max-width:800px){#mobile-controls{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:20}#mobile-controls button,#mobile-controls a{font:15px system-ui;min-height:44px;padding:10px 16px;color:white;background:#172033;border:1px solid #64748b;border-radius:4px;text-decoration:none}#help{display:none}}@media print{#mobile-controls{display:none!important}}
 
 @media(pointer:coarse),(max-width:800px){#stage{top:calc(50% - 32px)}}
