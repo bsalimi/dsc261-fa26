@@ -428,6 +428,7 @@
       <li><a href="materials/module-2/uncertainty-lecture-slides.pdf">Module 2 PDF</a></li>
       <li><a href="#module3">Module 3</a></li>
       <li><a href="materials/module-3/grounding-lecture-slides.pdf">Module 3 PDF</a></li>
+      <li><a href="#data-valuation">Data Valuation</a></li>
       <li><a href="#module4">Module 4</a></li>
       <li><a href="#topics">Topics</a></li>
       <li><a href="#calendar">Calendar</a></li>
@@ -549,6 +550,37 @@
       </div>
     </section>
 
+    <section id="data-valuation">
+      <span class="section-kicker">Published course materials</span>
+      <h2>Data Valuation</h2>
+      <p class="lead">Which data should we keep, clean, acquire, or prioritize for a chosen task? This lecture connects data valuation to data-centric trustworthy AI: model influence, LLM data selection, distributional similarity, KAIROS, and learning across possible repairs of uncertain data.</p>
+      <h3>Lecture materials</h3>
+      <a class="slides-button module-pdf" href="materials/data-valuation/data-valuation-lecture-slides.pdf?v=c4dc8e7c288d"><span>Download Data Valuation slides PDF</span><small>50 slides · Updated October 29, 2026 · Public PDF</small></a>
+      <h3>Topics covered</h3>
+      <ul>
+        <li>Using data values for selection, cleaning, acquisition, and reweighting.</li>
+        <li>Influence functions and valuation across the LLM development pipeline.</li>
+        <li>Wasserstein distance, MMD, Gaussian kernels, and the intuition behind bandwidth.</li>
+        <li>KAIROS: reference-based, model-agnostic valuation and distributional influence.</li>
+        <li>Learning from uncertain data: possible worlds, possible models, and data repairs.</li>
+      </ul>
+      <h3>Core reading list</h3>
+      <div class="session-readings">
+        <span class="reading"><a href="https://papers.nips.cc/paper_files/paper/2025/hash/7dc8c97e776bc33e862a5c55491ef44f-Abstract-Conference.html">KAIROS: Scalable Model-Agnostic Data Valuation</a><small>Zhu, Prashant, Cloninger &amp; Salimi · NeurIPS 2025 · Data value through influence on distributional similarity to a trusted reference</small></span>
+        <span class="reading"><a href="https://papers.nips.cc/paper_files/paper/2024/hash/c17fab1bcef325d0d30989c9bf506c0b-Abstract-Conference.html">Learning from Uncertain Data: From Possible Worlds to Possible Models</a><small>Zhu, Feng, Glavic &amp; Salimi · NeurIPS 2024 · ZORRO: model and prediction uncertainty across possible data completions</small></span>
+      </div>
+      <h3>Background and further reading</h3>
+      <p>Optional readings for the valuation methods, distribution comparisons, and LLM applications introduced in the lecture.</p>
+      <div class="session-readings long-list">
+        <span class="reading"><a href="https://proceedings.mlr.press/v97/ghorbani19c.html">Data Shapley: Equitable Valuation of Data for Machine Learning</a><small>Ghorbani &amp; Zou · ICML 2019 · Average marginal contribution across training subsets</small></span>
+        <span class="reading"><a href="https://proceedings.mlr.press/v70/koh17a.html">Understanding Black-box Predictions via Influence Functions</a><small>Koh &amp; Liang · ICML 2017 · How reweighting training data changes model predictions or loss</small></span>
+        <span class="reading"><a href="https://proceedings.mlr.press/v235/xia24c.html">LESS: Selecting Influential Data for Targeted Instruction Tuning</a><small>Xia et al. · ICML 2024 · Gradient-based data selection for target LLM capabilities</small></span>
+        <span class="reading"><a href="https://jmlr.org/papers/v13/gretton12a.html">A Kernel Two-Sample Test</a><small>Gretton et al. · JMLR 2012 · MMD and kernel-based distribution comparison</small></span>
+        <span class="reading"><a href="https://openreview.net/forum?id=JJuP86nBl4q">LAVA: Data Valuation without Pre-Specified Learning Algorithms</a><small>Just et al. · ICLR 2023 · Model-agnostic valuation using class-wise Wasserstein distance</small></span>
+        <span class="reading"><a href="https://doi.org/10.1145/1634.1886">Incomplete Information in Relational Databases</a><small>Imieliński &amp; Lipski · JACM 1984 · Possible-world foundations for incomplete information</small></span>
+      </div>
+    </section>
+
     <section id="module4">
       <span class="section-kicker">Published course materials</span>
       <h2>Module 4: Alignment and Post-training</h2>
@@ -574,21 +606,10 @@
       <div class="session-readings"><span class="reading"><a href="https://arxiv.org/abs/2404.04475">Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators</a><small>Dubois, Galambosi, Liang &amp; Hashimoto · COLM 2024 · Optional</small></span></div>
     </section>
 
-    <section id="data-valuation">
-      <span class="section-kicker">Published course materials</span>
-      <h2>Data valuation and data-centric responsible AI</h2>
-      <p class="lead">Influence functions and Shapley through original paper formulas and evidence, centered on the unchanged KAIROS presentation, with a short LLM extension.</p>
-      <h3>Lecture materials</h3>
-      <div class="session-readings">
-        <span class="reading"><a href="slides/data-valuation/?v=79e0a9c69726">Open Data Valuation slides in browser</a><small>34 slides ·KAIROS in depth ·Original formulas and evidence ·No login needed</small></span>
-        <span class="reading"><a href="materials/data-valuation/data-valuation-lecture-slides.pdf?v=79e0a9c69726">Data Valuation Lecture Slides PDF</a><small>34 PDF pages ·Original KAIROS pages retain vector text and artwork</small></span>
-      </div>
-    </section>
-
     <section id="topics">
       <span class="section-kicker">Ordered curriculum</span>
       <h2>Course topics: evaluating concrete safety claims</h2>
-      <p class="lead">Nine modules connect evaluation and grounding to post-training, adversarial robustness, agent security, oversight, privacy, and control. Internal-model techniques are introduced where they help evaluate a concrete safety claim.</p>
+      <p class="lead">Nine modules and a Data Valuation lecture connect evaluation and grounding to data-centric methods, post-training, adversarial robustness, agent security, oversight, privacy, and control. Internal-model techniques are introduced where they help evaluate a concrete safety claim.</p>
       <div class="grid two">
         <article class="card card-accent">
           <h3>M1 · Foundations</h3>
@@ -603,6 +624,11 @@
           <h3>M3 · Grounding</h3>
           <ul><li>Grounding, citations and claim verification</li></ul>
           <a href="materials/module-3/grounding-lecture-slides.pdf">Download Module 3 PDF — Grounding</a>
+        </article>
+        <article class="card card-accent">
+          <h3>Data Valuation</h3>
+          <ul><li>Selection, cleaning, and LLM data valuation</li><li>Distributional similarity, KAIROS, and learning from uncertain data</li></ul>
+          <a href="#data-valuation">Lecture PDF and readings</a>
         </article>
         <article class="card card-accent">
           <h3>M4 · Alignment &amp; Post-training</h3>
@@ -631,7 +657,7 @@
           <ul><li>Hidden objectives, alignment faking and emergent misalignment</li><li>AI control protocols, adversarial evaluations and safety cases</li></ul>
         </article>
       </div>
-      <div class="callout"><strong>Coverage and pacing:</strong> these 18 topic units describe the curriculum in teaching order. Units may span or share meetings; see the populated calendar below. Oversight and Monitoring share a combined session. Privacy attribution and measured deletion are supporting material.</div>
+      <div class="callout"><strong>Coverage and pacing:</strong> the topic units above describe the curriculum in teaching order. Units may span or share meetings; see the populated calendar below. Oversight and Monitoring share a combined session. Privacy attribution and measured deletion are supporting material.</div>
     </section>
 
     <section id="calendar">
